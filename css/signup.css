@@ -7,16 +7,20 @@
     background-repeat: no-repeat;
 }
 
+.container {
+    width: 50%;
+}
+
 .center-me {
     display: flex;
     justify-content: center;
     padding: 40px;
 }
 
-.form-signin {
-    background-color: rgb(170, 175, 169);
+.signup-form {
+    border-radius: 50px;
+    background-color: #d5d5d5;
     padding: 20px;
-    border-radius: 20px;
     text-align: center;
 }
 
