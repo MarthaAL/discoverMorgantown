@@ -42,7 +42,7 @@ session_start();
                     <a class="nav-link" href="../index.php">Home</a><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../login.php">Sign In</a><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../login.php">Log In</a><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../signup.php">Sign Up</a><span class="sr-only">(current)</span></a>

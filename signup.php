@@ -5,13 +5,13 @@ require "includes/header.php"
 <main>
 <link rel="stylesheet" href="css/signup.css">
     <div class="bg-cover">
-        <div class="h-100 container center-me">
+        <div class="h-40 container center-me">
             <div class="my-auto">
-                <div class="signup-form">
+                <div class="form-signup">
 
                     <form action="includes/signup-helper.php" method="post">
 
-                        <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+                        <h1 >Sign Up</h1>
                         <p class="hint-text">Create your account!</p>
                         <div class="form-group">
                             <div class="row">
@@ -25,8 +25,8 @@ require "includes/header.php"
                         </div>
                         <input type="text" class="form-control" name="uname" placeholder="Username" required autofocus>
 
-                        <label for="inputEmail" class="sr-only">Email address</label>
-                        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required
+                        <label for="inputEmail" class="sr-only">Email</label>
+                        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email" required
                             autofocus>
 
                         <label for="inputPassword" class="sr-only">Password</label>
@@ -35,8 +35,7 @@ require "includes/header.php"
                         <input type="password" id="inputPassword" class="form-control" name="con-pwd" placeholder="Confirm Password"
                             required>
 
-                        <button class="btn btn-lg btn-outline-primary btn-block" name="signup-submit" type="submit">Register</button>
-                        <p class="mt-5 mb-3 text-muted">&copy; 2020-9999</p>
+                        <button class="btn btn-lg btn-outline-warning btn-block" name="signup-submit" type="submit">Register</button>
 
                     </form>
                 </div>
