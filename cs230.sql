@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 11, 2021 at 09:25 PM
+-- Generation Time: Apr 12, 2021 at 10:33 AM
 -- Server version: 5.7.33-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cs230`
+-- Database: `group3`
 --
 
 -- --------------------------------------------------------
@@ -65,17 +65,19 @@ CREATE TABLE `outdoor` (
 CREATE TABLE `profiles` (
   `pid` int(11) NOT NULL,
   `fname` varchar(50) DEFAULT NULL,
+  `lname` varchar(50) DEFAULT NULL,
   `uname` varchar(50) DEFAULT NULL,
-  `profpic` varchar(50) NOT NULL DEFAULT '../images/default.jpg'
+  `email` varchar(50) DEFAULT NULL,
+  `profpic` varchar(50) NOT NULL DEFAULT '../images/default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 --
 -- Dumping data for table `profiles`
 --
 
-INSERT INTO `profiles` (`pid`, `fname`, `uname`, `profpic`) VALUES
-(1, 'hsfetty', 'hsfetty', '../images/default.jpg'),
-(2, 'Delaney', 'dmirwin', '../images/default.jpg');
+INSERT INTO `profiles` (`pid`, `fname`, `lname`, `uname`, `email`, `profpic`) VALUES
+(1, 'hsfetty', '', 'hsfetty', NULL, '../images/default.jpg'),
+(2, 'Delaney', '', 'dmirwin', NULL, '../images/default.jpg');
 
 -- --------------------------------------------------------
 
