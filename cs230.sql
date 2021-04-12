@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 12, 2021 at 10:33 AM
+-- Generation Time: Apr 12, 2021 at 10:40 AM
 -- Server version: 5.7.33-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -76,8 +76,9 @@ CREATE TABLE `profiles` (
 --
 
 INSERT INTO `profiles` (`pid`, `fname`, `lname`, `uname`, `email`, `profpic`) VALUES
-(1, 'hsfetty', '', 'hsfetty', NULL, '../images/default.jpg'),
-(2, 'Delaney', '', 'dmirwin', NULL, '../images/default.jpg');
+(1, 'hsfetty', 'hsfetty', 'hsfetty', 'hs@fetty.com', '../images/default.png'),
+(2, 'Delaney', 'Irwin', 'dmirwin', 'dmi0003@mix.wvu.edu', '../images/default.png'),
+(3, 'Martha', 'Lacek', 'Marty01', 'mal0058@mix.wvu.edu', '../images/default.png');
 
 -- --------------------------------------------------------
 
@@ -136,7 +137,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`uid`, `fname`, `lname`, `uname`, `password`, `email`) VALUES
 (1, 'hsfetty', 'hsfetty', 'hsfetty', '$2y$10$Hk5fh4s/kluoHiWj46kF6eBElT6YQK27F8PvvsWLC628C4Src6Z/u', 'hs@fetty.com'),
-(2, 'Delaney', 'Irwin', 'dmirwin', '$2y$10$V/9YJ/v0W97k/SFjb6r/2OA8TG8wjf5QNdbNuFtNjd/Lp1zWFSkju', 'dmi0003@mix.wvu.edu');
+(2, 'Delaney', 'Irwin', 'dmirwin', '$2y$10$V/9YJ/v0W97k/SFjb6r/2OA8TG8wjf5QNdbNuFtNjd/Lp1zWFSkju', 'dmi0003@mix.wvu.edu'),
+(3, 'Martha', 'Lacek', 'Marty01', '$2y$10$Tyak6UVpT/CBPNyMpXmti.p73BVqyox3oAVGt8uq4dZjXYoeYLxG2', 'mal0058@mix.wvu.edu');
 
 -- --------------------------------------------------------
 
@@ -220,7 +222,7 @@ ALTER TABLE `outdoor`
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `restraunts`
 --
@@ -235,7 +237,7 @@ ALTER TABLE `retail`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `volunteer`
 --
