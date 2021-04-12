@@ -1,0 +1,28 @@
+/*Style for the profile page.*/
+
+body {
+    background-color: rgba(147, 186, 189, 255);
+    border-radius: 10px
+}
+
+.card {
+    background-color: #d5d5d5;
+    width: 450px;
+    border: none;
+    border-radius: 10px;
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.upload {
+    background-color: rgb(0, 40, 85) ;
+    color: white;
+    border-radius: 10px;
+}
+
+.upload:hover {
+    color: rgb(234, 170, 0);
+  }
