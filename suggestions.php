@@ -27,7 +27,7 @@
                         <!-- Area for input: a description of the activity -->
                         <label for="inputDescription" class="sr-only">Tell us what you know about it!</label>
                         <div class="form-group">
-                            <textarea name="descript" id="bio" cols="30" rows="10" placeholder="Description"
+                            <textarea name="description" id="bio" cols="30" rows="10" placeholder="Description"
                                 style="text-align: center;"></textarea>
                         </div>
 
