@@ -10,7 +10,7 @@
             <div class="my-auto">
                 <div class="form-signup">
 
-                    <form action="includes/suggestion-helper.php" method="post">
+                    <form action="includes/suggestions-helper.php" method="post">
                         <!-- Area for input: the name of the activity, location, a description, and possible tags -->
                         <h1>Suggestion</h1>
                         <p class="hint-text">Tell us about a new activity not already on our website!</p>
