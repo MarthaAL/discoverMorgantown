@@ -1,9 +1,10 @@
 <?php
-// make sure the database can be accessed and start session
+// make sure the database can be accessed
 require 'dbhandler.php';
+// start a session
 session_start();
 
-// if the 'Submit Suggestion' was clicked
+// if the 'Submit Suggestion' was clicked on
 if(isset($_POST['suggestion-submit']))
 {
     $name = $_POST['name']; // name of the activity/location
@@ -30,7 +31,7 @@ if(isset($_POST['suggestion-submit']))
         exit();
     }
 }   
-// If the button was not clicked
+// If the button was not clicked on
 else
 {
     header("Location: ../suggestions.php");

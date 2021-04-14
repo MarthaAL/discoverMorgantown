@@ -19,15 +19,19 @@
                         <input type="text" class="form-control" name="name" placeholder="Activity/Location Name"
                             required autofocus>
 
+                        <!-- Area for input: the location of the activity -->
                         <label for="inputAddress" class="sr-only">Address</label>
                         <input type="address" id="inputAddress" class="form-control" name="location"
                             placeholder="Address" required autofocus>
 
+                        <!-- Area for input: a description of the activity -->
                         <label for="inputDescription" class="sr-only">Tell us what you know about it!</label>
                         <div class="form-group">
                             <textarea name="descript" id="bio" cols="30" rows="10" placeholder="Description"
                                 style="text-align: center;"></textarea>
                         </div>
+
+                        <!-- Area for input:possible tags for the activity -->
                         <label for="inputTags" class="sr-only">Possible Tag(s)</label>
                         <input type="tags" id="inputTags" class="form-control" name="tags" placeholder="Tag(s)"
                             required>
