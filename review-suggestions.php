@@ -18,7 +18,6 @@ require 'includes/header.php';
                 <a href="suggestions.php?id='.$row['sid'].'">
                 <h3>'.$row["name"].'</h3>
                 <p>'.$row["address"].'</p>
-                <p>'.$row["descript"].'</p>
                 </a>
                </div>';
             }
