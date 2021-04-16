@@ -1,7 +1,8 @@
 body {
     font-family: 'Times New Roman';
     text-align: center;
-    background-color: rgb(241, 237, 216);
+    background-color: rgba(147, 186, 189, 255);
+    
 }
 
 
@@ -12,6 +13,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    text-decoration-color: rgb(0, 40, 85);
 }
 
 .card {
@@ -19,12 +21,13 @@ body {
     margin: 10px; 
     width: 20%;
     max-width:320px; 
-    height: auto;
+    height: 20%;
     padding: 10px;
+    background-color: rgb(0, 40, 85);
 }
 
 .reviewsuggestions-container a {
-    background-color:rgb(0, 40, 85);;
+    background-color:rgb(241, 237, 216);
     background-position: center;
     background-size: 90%;
     border-radius: 10px;
