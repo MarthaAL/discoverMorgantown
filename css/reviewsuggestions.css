@@ -1,7 +1,7 @@
 body {
     font-family: 'Times New Roman';
     text-align: center;
-    background-color: rgb(0, 40, 85);
+    background-color: rgb(241, 237, 216);
 }
 
 
@@ -24,13 +24,13 @@ body {
 }
 
 .reviewsuggestions-container a {
-    background-color:rgb(231, 158, 168);
+    background-color:rgb(0, 40, 85);;
     background-position: center;
-    background-size: cover;
+    background-size: 90%;
     border-radius: 10px;
 }
 
 a:hover {
     opacity: 70%;
-    text-decoration-color:rgb(231, 158, 168);
+    text-decoration-color:white;
 }

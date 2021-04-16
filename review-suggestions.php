@@ -17,7 +17,7 @@ require 'includes/header.php';
                 echo '    <div class="card">
                 <a href="suggestions.php?id='.$row['sid'].'">
                 <h3>'.$row["name"].'</h3>
-                <p>'.$row["address"].'</p>
+                <p>'.$row["location"].'</p>
                 </a>
                </div>';
             }
