@@ -1,3 +1,11 @@
+body {
+    font-family: 'Times New Roman';
+    text-align: center;
+    background-color: rgb(0, 40, 85);
+}
+
+
+
 .reviewsuggestions-container {
     text-align: center;
     display: flex; 
