@@ -1,5 +1,5 @@
 <?php 
-
+require 'includes/dbhandler.php';
 session_start();
 
 ?>
@@ -42,6 +42,7 @@ session_start();
 
 </head>
 
+
 <header>
     <div>
     <nav>
@@ -73,10 +74,16 @@ session_start();
         <ul class="right" style="margin-left: -100px; padding-left: 0px; margin-top: -75px;">
             <?php if (isset($_SESSION['uid'])) {
 
+                    $prof_user = $_SESSION['uname'];
+                    $sqlpro = "SELECT * FROM profiles WHERE uname='$prof_user';";
+                    $res = mysqli_query($conn, $sqlpro);
+                    $row = mysqli_fetch_array($res);
+                    $photo = $row['profpic']; //path to the profile picture
+                    
                         echo '
                         <div class="dropdown circle" style="margin-left: 0px; margin-top: 8px;">
-                        <button class="profile circle" style="background-image: url(../images/default.png);"></button>
-                        <div class="dropdown-content" style="transform: translate(-45px, 0px); margin-right: 50px;">
+                        <img class="profile circle" src="'.$photo.'";>
+                        <div class="dropdown-content" style="transform: translate(-76px, 0px);">
                         <a style="background-color: rgb(0, 40, 85); font-size: 0px; padding: 4px;"></a>
                         <li><a class="dropdown-item" href="../profile.php">Profile</a></li>
                         <li><a class="dropdown-item" href="../favorties.php">Favorites</a></li>
@@ -89,7 +96,7 @@ session_start();
 
                         echo '
                         <div class="dropdown circle" style="margin-left: 0px; margin-top: 8px;">
-                        <button class="profile circle" style="background-image: url(../images/default.png);"></button>
+                        <img class="profile circle" src="../images/default.png";>
                         <div class="dropdown-content" style="transform: translate(-76px, 0px);">
                         <a style="background-color: rgb(0, 40, 85); font-size: 0px; padding: 4px;"></a>
                         <li><a class="dropdown-item" href="../login.php">Login</a></li>

@@ -1,0 +1,27 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+footer {
+    background-color: rgb(0, 40, 85);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    color: rgb(234, 170, 0);
+    height: auto;
+    font-size: 25px;
+    padding: 10px;
+}
+  
