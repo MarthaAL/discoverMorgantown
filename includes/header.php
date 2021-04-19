@@ -57,6 +57,7 @@ session_start();
                         echo '
                         <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
                         <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
+                        <li><a href="../index.php"><p style="padding: 18px;">AboutUs</p></a></li>
                         <li><a href="../about.php"><p style="padding: 18px;">About</p></a></li>';
                     }
 
@@ -66,6 +67,7 @@ session_start();
                         <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
                         <li><a href="../login.php"><p style="padding: 18px;">Login</p></a></li>
                         <li><a href="../signup.php"><p style="padding: 18px;">Signup</p></a></li>
+                        <li><a href="../index.php"><p style="padding: 18px;">AboutUs</p></a></li>
                         <li><a href="../about.php"><p style="padding: 18px;">About</p></a></li>';
                     }
                     ?>        
