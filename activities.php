@@ -9,65 +9,71 @@ require 'includes/header.php';
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/gallery-reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/gallery.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/activities-reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/activities.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title>Activities</title>
 </head>
+
+
 <body>
 	<header class="cd-header">
-		<h1>Activities</h1>
+		<h1 style="font-size: 60px;">Activities</h1>
 	</header>
 
+		<!-- Displays Filter Bar -->
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				<ul class="cd-filters">
-					<li class="placeholder"> 
-						<a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
-					</li> 
-					<li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-					<li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-					<li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
-				</ul> <!-- cd-filters -->
-			</div> <!-- cd-tab-filter -->
-		</div> <!-- cd-tab-filter-wrapper -->
+				<ul class="cd-filters"></ul>
+			</div>
+		</div>
 
+		<!-- Displays activity gallery -->
 		<section class="cd-gallery">
-
 			<ul>
-				<li class="mix color-1 check1 radio2 option3"><img src="images/Nightlife.jpg" alt="Image 1"></li>
-				<li class="mix color-2 check2 radio2 option2"><img src="images/Outdoor.png" alt="Image 2"></li>
-				<li class="mix color-1 check3 radio3 option1"><img src="img/img-3.jpg" alt="Image 3"></li>
-				<li class="mix color-1 check3 radio2 option4"><img src="img/img-4.jpg" alt="Image 4"></li>
-				<li class="mix color-1 check1 radio3 option2"><img src="img/img-5.jpg" alt="Image 5"></li>
-				<li class="mix color-2 check2 radio3 option3"><img src="img/img-6.jpg" alt="Image 6"></li>
-				<li class="mix color-2 check2 radio2 option1"><img src="img/img-7.jpg" alt="Image 7"></li>
-				<li class="mix color-1 check1 radio3 option4"><img src="img/img-8.jpg" alt="Image 8"></li>
-				<li class="mix color-2 check1 radio2 option3"><img src="img/img-9.jpg" alt="Image 9"></li>
-				<li class="mix color-1 check3 radio2 option4"><img src="img/img-10.jpg" alt="Image 10"></li>
-				<li class="mix color-1 check3 radio3 option2"><img src="img/img-11.jpg" alt="Image 11"></li>
-				<li class="mix color-2 check1 radio3 option1"><img src="img/img-12.jpg" alt="Image 12"></li>
+			<?php
+           			include_once 'includes/dbhandler.php';
+           			$sql = "SELECT * FROM activities";
+            		$query = mysqli_query($conn, $sql);
+
+					// Loops through activities table to display in gallery
+            		while($row = mysqli_fetch_assoc($query)) {
+						// Replaces commas in between tags with whitespace
+						$tags = str_replace(',', ' ', $row['tags']);
+
+					// Creates a new activity entry that belongs to classes of its name and tags (allows for filtering); provides link to its individual page
+                	echo '<li class="mix '.$row['name'].' '.$tags.'">
+                        <a href="activitydisplay.php?id='.$row['itemid'].'">
+                        <img src="'.$row["pic1"].'">
+                        <h3 style="text-align: center;">'.$row["name"].'</h3>
+                        </a>
+                    	</div>';
+            		}
+        		?>
 				<li class="gap"></li>
 				<li class="gap"></li>
 				<li class="gap"></li>
 			</ul>
+			<!-- Displays "No results found" if filter has no results -->
 			<div class="cd-fail-message">No results found</div>
-		</section> <!-- cd-gallery -->
+		</section>
 
+		<!-- Displays filter options in side menu -->
 		<div class="cd-filter">
 			<form>
+
+				<!-- Search filter -->
 				<div class="cd-filter-block">
 					<h4>Search</h4>
 					
 					<div class="cd-filter-content">
-						<input type="search" placeholder="Try color-1...">
+						<input type="search" placeholder="...">
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 
+				<!-- Categories checkbox filter -->
 				<div class="cd-filter-block">
-					<h4>Check boxes</h4>
+					<h4>Categories</h4>
 
 					<ul class="cd-filter-content cd-filters list">
 						<li>
@@ -89,54 +95,20 @@ require 'includes/header.php';
 							<input class="filter" data-filter=".nightlife" type="checkbox" id="nightlife">
 							<label class="checkbox-label" for="nightlife">Nightlife</label>
 						</li>
-					</ul> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
-
-				<div class="cd-filter-block">
-					<h4>Select</h4>
-					
-					<div class="cd-filter-content">
-						<div class="cd-select cd-filters">
-							<select class="filter" name="selectThis" id="selectThis">
-								<option value="">Choose an option</option>
-								<option value=".option1">Option 1</option>
-								<option value=".option2">Option 2</option>
-								<option value=".option3">Option 3</option>
-								<option value=".option4">Option 4</option>
-							</select>
-						</div> <!-- cd-select -->
-					</div> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
-
-				<div class="cd-filter-block">
-					<h4>Radio buttons</h4>
-
-					<ul class="cd-filter-content cd-filters list">
-						<li>
-							<input class="filter" data-filter="" type="radio" name="radioButton" id="radio1" checked>
-							<label class="radio-label" for="radio1">All</label>
-						</li>
-
-						<li>
-							<input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
-							<label class="radio-label" for="radio2">Choice 2</label>
-						</li>
-
-						<li>
-							<input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-							<label class="radio-label" for="radio3">Choice 3</label>
-						</li>
-					</ul> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
+					</ul>
+				</div>
 			</form>
 
 			<a href="#0" class="cd-close">Close</a>
-		</div> <!-- cd-filter -->
+		</div>
 
 		<a href="#0" class="cd-filter-trigger">Filters</a>
-	</main> <!-- cd-main-content -->
+	</main>
+
+<!-- JavaScript scripts -->
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/jquery.mixitup.min.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
+
 </body>
 </html>
