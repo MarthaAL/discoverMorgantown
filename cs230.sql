@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 12, 2021 at 10:40 AM
+-- Generation Time: Apr 21, 2021 at 08:32 PM
 -- Server version: 5.7.33-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -17,8 +17,55 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `group3`
+-- Database: `cs230`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activities`
+--
+
+CREATE TABLE `activities` (
+  `itemid` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `location` varchar(75) NOT NULL,
+  `open` time NOT NULL,
+  `close` time NOT NULL,
+  `cost` int(3) NOT NULL,
+  `pic1` varchar(50) NOT NULL,
+  `pic2` varchar(50) NOT NULL,
+  `tags` varchar(50) NOT NULL,
+  `fakes` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `activities`
+--
+
+INSERT INTO `activities` (`itemid`, `name`, `description`, `location`, `open`, `close`, `cost`, `pic1`, `pic2`, `tags`, `fakes`) VALUES
+(1, 'White Park', 'White Park, also the home of the Morgantown Ice Arena, is a 170-acre park that serves as a hub for many athletic activities.  The park includes four adult softball fields and two youth baseball fields, a pavilion, and a small play area adjacent to the pavilion with swings and a slide.  Five miles of wooded trails interspersed throughout the park are used by hikers, bikers and wildlife enthusiasts. Additionally, White Park is home to a waterfall along one of it\'s trails.', 'White Park, 1001 Mississippi St, Morgantown, WV 26501', '08:30:00', '04:30:00', 1, '', '', 'outdoor', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorites`
+--
+
+CREATE TABLE `favorites` (
+  `fid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `activityid` int(11) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favorites`
+--
+
+INSERT INTO `favorites` (`fid`, `userid`, `activityid`, `date`) VALUES
+(1, 4, 1, '2021-04-21 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -78,7 +125,13 @@ CREATE TABLE `profiles` (
 INSERT INTO `profiles` (`pid`, `fname`, `lname`, `uname`, `email`, `profpic`) VALUES
 (1, 'hsfetty', 'hsfetty', 'hsfetty', 'hs@fetty.com', '../images/default.png'),
 (2, 'Delaney', 'Irwin', 'dmirwin', 'dmi0003@mix.wvu.edu', '../images/default.png'),
-(3, 'Martha', 'Lacek', 'Marty01', 'mal0058@mix.wvu.edu', '../images/default.png');
+(3, 'heather', 'fetty', 'fettywap', 'fetty@wap.rap', '../images/default.png'),
+(4, 'Martha', 'Lacek', 'Marty01', 'mal0058@mix.wvu.edu', 'profiles/60808a85668875.70291666.jpeg'),
+(5, 'Alex', 'Royce', 'akroyce', 'akr0030@mix.wvu.edu', 'profiles/607c9fcd461d37.25829330.jpg'),
+(6, 'kate', '.', 'kate', '1@1.com', '../images/default.png'),
+(7, 'Delaney', 'Irwin', 'dmi0003', 'dmi0003@mix.wvu.edu', '../images/default.png'),
+(8, 'Harley', 'Frazee', 'hpf0004', 'hpf0004@mix.wvu.edu', '../images/default.png'),
+(9, 'Callyn', 'Zeigler', 'callyn', 'cal@cal.com', '../images/default.png');
 
 -- --------------------------------------------------------
 
@@ -119,6 +172,29 @@ CREATE TABLE `retail` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `suggestions`
+--
+
+CREATE TABLE `suggestions` (
+  `sid` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `location` varchar(50) DEFAULT NULL,
+  `description` text NOT NULL,
+  `tags` varchar(50) NOT NULL,
+  `upload_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `suggestions`
+--
+
+INSERT INTO `suggestions` (`sid`, `name`, `location`, `description`, `tags`, `upload_date`) VALUES
+(1, 'Tudor\'s Biscuit World', '376 High St, Morgantown, WV 26505', 'They serve breakfast all day. Their link: http://www.tudorsbiscuitworld.com/', 'Restaurants', '2021-04-16 00:58:31'),
+(2, 'Casa d\'Amici', 'High St', 'Pizza', 'Restaurant', '2021-04-16 00:58:31');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -138,7 +214,13 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`uid`, `fname`, `lname`, `uname`, `password`, `email`) VALUES
 (1, 'hsfetty', 'hsfetty', 'hsfetty', '$2y$10$Hk5fh4s/kluoHiWj46kF6eBElT6YQK27F8PvvsWLC628C4Src6Z/u', 'hs@fetty.com'),
 (2, 'Delaney', 'Irwin', 'dmirwin', '$2y$10$V/9YJ/v0W97k/SFjb6r/2OA8TG8wjf5QNdbNuFtNjd/Lp1zWFSkju', 'dmi0003@mix.wvu.edu'),
-(3, 'Martha', 'Lacek', 'Marty01', '$2y$10$Tyak6UVpT/CBPNyMpXmti.p73BVqyox3oAVGt8uq4dZjXYoeYLxG2', 'mal0058@mix.wvu.edu');
+(3, 'heather', 'fetty', 'fettywap', '$2y$10$epHkr2nR1s348i0I6so/SOGbhMRyCOXeTTlqkCQU4jgNIPu8MxKBq', 'fetty@wap.rap'),
+(4, 'Martha', 'Lacek', 'Marty01', '$2y$10$S8k8WyMOw.VQ7AV2GQznc.5V/xRiv8px9j0jPBQ/SeYMlvGq.KB.a', 'mal0058@mix.wvu.edu'),
+(5, 'Alex', 'Royce', 'akroyce', '$2y$10$uZp9X3z7SX6zM0HSLO7r7uHBHsde1DVCmiSfCWoRf0qLqJ1nDXRUm', 'akr0030@mix.wvu.edu'),
+(6, 'kate', '.', 'kate', '$2y$10$9VH6QMtsCpAGZYvgC1wYYubpkEKmgC8iTM/i0.i9EBbr0JUHFaqEm', '1@1.com'),
+(7, 'Delaney', 'Irwin', 'dmi0003', '$2y$10$i9qwoQZodEeRgs1uEDBlKOGLMtZCLqf5HwbalaU5Dm0xrcTVdNzCq', 'dmi0003@mix.wvu.edu'),
+(8, 'Harley', 'Frazee', 'hpf0004', '$2y$10$pZ/zWp7XIrjU8wAgjA4qQ.lqeVZ/CzrY1US9wp60HdDPhvGZeCqdO', 'hpf0004@mix.wvu.edu'),
+(9, 'Callyn', 'Zeigler', 'callyn', '$2y$10$r/FtNXK8N3574j/XbWqsZO60SapC.TrP7RmxRxJuXnwtEYMsnvxsO', 'cal@cal.com');
 
 -- --------------------------------------------------------
 
@@ -161,6 +243,18 @@ CREATE TABLE `volunteer` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
+  ADD PRIMARY KEY (`itemid`);
+
+--
+-- Indexes for table `favorites`
+--
+ALTER TABLE `favorites`
+  ADD PRIMARY KEY (`fid`);
 
 --
 -- Indexes for table `night`
@@ -193,6 +287,12 @@ ALTER TABLE `retail`
   ADD PRIMARY KEY (`itemid`);
 
 --
+-- Indexes for table `suggestions`
+--
+ALTER TABLE `suggestions`
+  ADD PRIMARY KEY (`sid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -209,6 +309,11 @@ ALTER TABLE `volunteer`
 --
 
 --
+-- AUTO_INCREMENT for table `favorites`
+--
+ALTER TABLE `favorites`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `night`
 --
 ALTER TABLE `night`
@@ -222,7 +327,7 @@ ALTER TABLE `outdoor`
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `restraunts`
 --
@@ -234,10 +339,15 @@ ALTER TABLE `restraunts`
 ALTER TABLE `retail`
   MODIFY `itemid` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `suggestions`
+--
+ALTER TABLE `suggestions`
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `volunteer`
 --
