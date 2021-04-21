@@ -57,18 +57,16 @@ session_start();
                         echo '
                         <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
                         <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;">AboutUs</p></a></li>
-                        <li><a href="../about.php"><p style="padding: 18px;">About</p></a></li>';
+                        <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
                     }
 
                     else {
 
                         echo '
                         <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
-                        <li><a href="../login.php"><p style="padding: 18px;">Login</p></a></li>
-                        <li><a href="../signup.php"><p style="padding: 18px;">Signup</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;">AboutUs</p></a></li>
-                        <li><a href="../about.php"><p style="padding: 18px;">About</p></a></li>';
+                        <li><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
+                        <li><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
+                        <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
                     }
                     ?>        
         </ul>
@@ -88,8 +86,8 @@ session_start();
                         <div class="dropdown-content" style="transform: translate(-76px, 0px);">
                         <a style="background-color: rgb(0, 40, 85); font-size: 0px; padding: 4px;"></a>
                         <li><a class="dropdown-item" href="../profile.php">Profile</a></li>
-                        <li><a class="dropdown-item" href="../favorties.php">Favorites</a></li>
-                        <li><a class="dropdown-item" href="../logout.php">Signout</a></li>
+                        <li><a class="dropdown-item" href="../favorites.php">Favorites</a></li>
+                        <li><a class="dropdown-item" href="../logout.php">Sign Out</a></li>
                         </div>
                         </div>';
                     }
@@ -101,8 +99,8 @@ session_start();
                         <img class="profile circle" src="../images/default.png";>
                         <div class="dropdown-content" style="transform: translate(-76px, 0px);">
                         <a style="background-color: rgb(0, 40, 85); font-size: 0px; padding: 4px;"></a>
-                        <li><a class="dropdown-item" href="../login.php">Login</a></li>
-                        <li><a class="dropdown-item" href="../signup.php">Signup</a></li>
+                        <li><a class="dropdown-item" href="../login.php">Log In</a></li>
+                        <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
                         </div>
                         </div>';
                     }

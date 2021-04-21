@@ -17,7 +17,7 @@ require 'includes/header.php';
 
 <body>
 	<header class="cd-header">
-		<h1 style="font-size: 60px;">Activities</h1>
+		<h1 style="font-size: 60px;">Favorited Activities</h1>
 	</header>
 
 		<!-- Displays Filter Bar -->
@@ -33,21 +33,29 @@ require 'includes/header.php';
 			<ul>
 			<?php
            			include_once 'includes/dbhandler.php';
-           			$sql = "SELECT * FROM activities";
-            		$query = mysqli_query($conn, $sql);
+           			$sqlFavorites = "SELECT * FROM favorites";
+            		$queryFavorites = mysqli_query($conn, $sqlFavorites);
 
-					// Loops through activities table to display in gallery
-            		while($row = mysqli_fetch_assoc($query)) {
-						// Replaces commas in between tags with whitespace
-						$tags = str_replace(',', ' ', $row['tags']);
+					// Loops through favorites table to display in gallery any activites favorited by user
+            		while($rowFavorites = mysqli_fetch_assoc($queryFavorites)) {
+                        if($rowFavorites['userid'] == $_SESSION['uid'])
+                        {
+                            $sqlActivities = "SELECT * FROM activities WHERE itemid = $rowFavorites[activityid]";
+            		        $queryActivities = mysqli_query($conn, $sqlActivities);
 
-					// Creates a new activity entry that belongs to classes of its name and tags (allows for filtering); provides link to its individual page
-                	echo '<li class="mix '.$row['name'].' '.$tags.'">
-                        <a href="activitydisplay.php?id='.$row['itemid'].'">
-                        <img src="'.$row["pic1"].'">
-                        <h3 style="text-align: center;">'.$row["name"].'</h3>
-                        </a>
-                    	</li>';
+                            while($rowActivities = mysqli_fetch_assoc($queryActivities)) {
+                                // Replaces commas in between tags with whitespace
+						        $tags = str_replace(',', ' ', $rowActivities['tags']);
+
+                                // Creates a new activity entry that belongs to classes of its name and tags (allows for filtering); provides link to its individual page
+                                echo '<li class="mix '.$rowActivities['name'].' '.$tags.'">
+                                    <a href="activitydisplay.php?id='.$rowActivities['itemid'].'">
+                                    <img src="'.$rowActivities["pic1"].'">
+                                    <h3 style="text-align: center;">'.$rowActivities["name"].'</h3>
+                                    </a>
+                                    </li>'; 
+                            }
+                        }
             		}
         		?>
 				<li class="gap"></li>
