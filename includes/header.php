@@ -67,7 +67,6 @@ session_start();
                         <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
                         <li><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
                         <li><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
-                        <li><a href="../suggestions.php"><p style="padding: 18px;">Suggestions</p></a></li>
                         <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
                     }
                     ?>        

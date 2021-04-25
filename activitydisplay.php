@@ -3,7 +3,9 @@ require 'includes/header.php';
 
 
     include_once 'includes/dbhandler.php';
-    $sql = "SELECT * FROM activities WHERE itemid='1'";
+    $activityid = 1;
+    $_SESSION['activity'] = $activityid;
+    $sql = "SELECT * FROM activities WHERE itemid= $activityid";
     $query = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($query);
     $name = $row['name'];
@@ -145,6 +147,31 @@ require 'includes/header.php';
                 </p0>
             </div>
         </div>
+
+        <!-- Favorite/Unfavorite Button -->
+        <?php
+           	$sqlFavorites = "SELECT * FROM favorites";
+            $queryFavorites = mysqli_query($conn, $sqlFavorites);
+            $text = "Favorite";
+
+			// Loops through favorites table to determine if activity is favorited by user
+            while($rowFavorites = mysqli_fetch_assoc($queryFavorites)) 
+            {
+                //Check if activity favorited is current activity displayed and if user that favorited it is current user
+                if($rowFavorites['activityid'] == $activityid && $rowFavorites['userid'] == $_SESSION['uid'])
+                {
+                    $text = "Unfavorite";
+                }
+            }
+        ?>
+
+        <form action="includes/favorite-helper.php" method="POST" enctype="multipart/form-data">
+            <div class="w3-card w3-margin button">
+                <div class="w3-container w3-padding ">
+                     <button class ="button" type ="submit" name ="<?php echo $text?>"><?php echo $text?></button>
+                </div>
+            </div>
+        </form>
     </div>
 
 </div>
