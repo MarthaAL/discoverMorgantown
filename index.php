@@ -1,7 +1,3 @@
-<div class="about-section">
-    <h1>About Us Page</h1>
-  </div>
-  
     <?php
     require 'includes/header.php';
     ?>
