@@ -18,7 +18,7 @@
 
         mysqli_query($conn, $sql);
 
-        header("Location: ../activitydisplay.php?success=FavoriteWin");
+        header("Location: ../activitydisplay.php?id=$activityid");
         exit();
     }
     //Checks that the user clicked the button to unfavorite an activity
@@ -33,7 +33,7 @@
 
         mysqli_query($conn, $sql);
 
-        header("Location: ../activitydisplay.php?success=UnfavoriteWin");
+        header("Location: ../activitydisplay.php?id=$activityid");
         exit();
     }
     else

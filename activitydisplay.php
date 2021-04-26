@@ -3,7 +3,7 @@ require 'includes/header.php';
 
 
     include_once 'includes/dbhandler.php';
-    $activityid = $_GET['id'];;
+    $activityid = $_GET['id'];
     $_SESSION['activity'] = $activityid;
     $sql = "SELECT * FROM activities WHERE itemid= $activityid";
     $query = mysqli_query($conn, $sql);
