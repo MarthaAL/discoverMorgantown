@@ -4,10 +4,10 @@
     
     <body>
         <link rel="stylesheet" href="css/about.css">
-    
-        <div class="about">
-            <h1>About Us</h1>
-        </div>
+    <header class="cd-header">
+		<h1 style="font-size: 60px;">Activities</h1>
+	</header>
+
         <div class="row">
             <div class="column">
                 <div class="card">
