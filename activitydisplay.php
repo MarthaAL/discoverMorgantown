@@ -3,7 +3,7 @@ require 'includes/header.php';
 
 
     include_once 'includes/dbhandler.php';
-    $activityid = 1;
+    $activityid = $_GET['id'];;
     $_SESSION['activity'] = $activityid;
     $sql = "SELECT * FROM activities WHERE itemid= $activityid";
     $query = mysqli_query($conn, $sql);
@@ -69,7 +69,7 @@ require 'includes/header.php';
         <!-- Details Card -->
          <div class="w3-container">
              <h>Details:</h>
-              <sh class="w3-opacity"> <br>Last Updated: April 9, 2021 </sh>
+              <sh class="w3-opacity"> <br>Last Updated: April 26, 2021 </sh>
             </div>
         
             <div class="w3-container2">
