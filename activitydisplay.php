@@ -53,8 +53,8 @@ require 'includes/header.php';
 
     <!-- Images -->
     <div class="w3-container" >
-      <img class = "img1" src= <?php echo $pic ?> >
-      <img class = "img2" src= <?php echo $pic ?> >
+      <img class = "img1" src= <?php echo $pic1 ?> >
+      <img class = "img2" src= <?php echo $pic2 ?> >
       
       
     </div>
