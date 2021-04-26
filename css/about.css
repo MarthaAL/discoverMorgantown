@@ -27,6 +27,14 @@ html {
 p {
     color: black;
 }
+h1{
+    color: white;
+    margin: auto;
+    display: inline-block;
+    background-color: rgb(0, 40, 85);
+    height: 75px;
+    font-size: 25px;
+  }
 
 .about {
     background: rgba(147,186,189,255);
