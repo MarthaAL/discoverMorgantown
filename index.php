@@ -20,7 +20,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Alex Royce</p>
-                        <p>Email: </p>
                     </div>
                 </div>
             </div>
@@ -28,11 +27,10 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src=".JPG">
+                    <img src=".jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Callyn Zeigler</p>
-                        <p>Email: </p>
                     </div>
                 </div>
             </div>
@@ -44,7 +42,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Harley Frazee</p>
-                        <p>Email:</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +82,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/.JPG">
+                    <img src="images/MattTowey.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Matt Towey</p>
