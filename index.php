@@ -40,7 +40,6 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/.JPG">
                     <img src="images/HarleyFrazee.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
@@ -75,7 +74,6 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/.JPG">
                     <img src="images/Martha.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
