@@ -16,7 +16,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src=".JPG">
+                    <img src="AlexRoyce.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Alex Royce</p>
@@ -108,76 +108,3 @@
             </div>
         </div>
     </body>
-  
-    <div class="column">
-      <div class="card">
-        <img src="/images/team2.jpg" alt="Martha" style="width:100%">
-        <div class="container">
-          <h2>Martha</h2>
-          <p class="title">Group Member</p>
-          </div>
-      </div>
-    </div>
-    
-     <div class="column">
-      <div class="card">
-        <img src="/images/team2.jpg" alt="Heather" style="width:100%">
-        <div class="container">
-          <h2>Heather Fetty</h2>
-          <p class="title">Group Member</p>
-          </div>
-      </div>
-    </div>
-    
-     <div class="column">
-      <div class="card">
-        <img src="/images/team2.jpg" alt="Callyn" style="width:100%">
-        <div class="container">
-          <h2>Callyn Zeigler</h2>
-          <p class="title">Group Member</p>
-         </div>
-      </div>
-    </div>
-    
-     <div class="column">
-      <div class="card">
-        <img src="/images/team2.jpg" alt="Katilyn" style="width:100%">
-        <div class="container">
-          <h2>Katilyn Hepler</h2>
-          <p class="title">Group Member</p>
-          <p>Some text that describes me.</p>
-          <p>mike@example.com</p>
-         </div>
-      </div>
-    </div>
-    
-     <div class="column">
-      <div class="card">
-        <img src="/images/team2.jpg" alt="Delaney" style="width:100%">
-        <div class="container">
-          <h2>Delaney Irwin</h2>
-          <p class="title">Group Member</p>
-          </div>
-      </div>
-    </div>
-    
-    <div class="column">
-      <div class="card">
-        <img src="/images/team3.jpg" alt="Matt" style="width:100%">
-        <div class="container">
-          <h2>Matt Towey</h2>
-          <p class="title">Group Member</p>
-          </div>
-      </div>
-    </div>
-    
-    <div class="column">
-      <div class="card">
-        <img src="/images/team3.jpg" alt="Alex" style="width:100%">
-        <div class="container">
-          <h2>Alex Royce</h2>
-          <p class="title">Group Member</p>
-          </div>
-      </div>
-    </div>
-  </div>
