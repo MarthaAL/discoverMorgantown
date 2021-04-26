@@ -55,11 +55,10 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/.JPG">
+                    <img src="images/HeatherFetty.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Heather Fetty</p>
-                        <p>Email:</p>
                     </div>
                 </div>
             </div>
@@ -71,7 +70,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Katilyn Hepler</p>
-                        <p>Email:</p>
                     </div>
                 </div>
             </div>
@@ -84,7 +82,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Martha</p>
-                        <p>Email:</p>
                     </div>
                 </div>
             </div>
@@ -96,7 +93,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Matt Towey</p>
-                        <p>Email:</p>
                     </div>
                 </div>
             </div>
@@ -121,8 +117,6 @@
         <div class="container">
           <h2>Martha</h2>
           <p class="title">Group Member</p>
-          <p>I'm a sophomore majoring in Computer Science and German. In my free time i like hiking and hanging out with friends.</p>
-          <p>mike@example.com</p>
           </div>
       </div>
     </div>
@@ -133,8 +127,6 @@
         <div class="container">
           <h2>Heather Fetty</h2>
           <p class="title">Group Member</p>
-          <p>Some text that describes me.</p>
-          <p>mike@example.com</p>
           </div>
       </div>
     </div>
@@ -145,8 +137,6 @@
         <div class="container">
           <h2>Callyn Zeigler</h2>
           <p class="title">Group Member</p>
-          <p>Some text that describes me.</p>
-          <p>mike@example.com</p>
          </div>
       </div>
     </div>
@@ -169,8 +159,6 @@
         <div class="container">
           <h2>Delaney Irwin</h2>
           <p class="title">Group Member</p>
-          <p>Some text that describes me.</p>
-          <p>dmi0003@mix.wvu.edu</p>
           </div>
       </div>
     </div>
@@ -181,8 +169,6 @@
         <div class="container">
           <h2>Matt Towey</h2>
           <p class="title">Group Member</p>
-          <p>Some text that describes me.</p>
-          <p>john@example.com</p>
           </div>
       </div>
     </div>
@@ -193,8 +179,6 @@
         <div class="container">
           <h2>Alex Royce</h2>
           <p class="title">Group Member</p>
-          <p>Some text that describes me.</p>
-          <p>john@example.com</p>
           </div>
       </div>
     </div>
