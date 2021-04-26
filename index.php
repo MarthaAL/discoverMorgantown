@@ -7,7 +7,6 @@
     
         <div class="about">
             <h1>About Us</h1>
-            <p>We are Group 3!</p>
         </div>
         <div class="row">
             <div class="column">
