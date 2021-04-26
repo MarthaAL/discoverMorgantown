@@ -1,18 +1,13 @@
-<div class="about-section">
-    <h1>About Us Page</h1>
-  </div>
-  
     <?php
     require 'includes/header.php';
     ?>
     
     <body>
         <link rel="stylesheet" href="css/about.css">
-    
-        <div class="about">
-            <h1>About Us</h1>
-            <p>We are Group 3!</p>
-        </div>
+    <header class="cd-header">
+		<h1 style="font-size: 60px;">Activities</h1>
+	</header>
+
         <div class="row">
             <div class="column">
                 <div class="card">
@@ -20,7 +15,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Alex Royce</p>
-                        <p>Email: </p>
                     </div>
                 </div>
             </div>
@@ -28,11 +22,10 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src=".JPG">
+                    <img src=".jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Callyn Zeigler</p>
-                        <p>Email: </p>
                     </div>
                 </div>
             </div>
@@ -44,7 +37,6 @@
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Harley Frazee</p>
-                        <p>Email:</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +77,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/.JPG">
+                    <img src="images/MattTowey.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Matt Towey</p>
