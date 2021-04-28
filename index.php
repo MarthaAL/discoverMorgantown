@@ -12,7 +12,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="AlexRoyce.jpg">
+                    <img src="images/AlexRoyce.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Alex Royce</p>
@@ -56,7 +56,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/.JPG">
+                    <img src="images/KatilynHepler.jpeg">
                     <div class="container">
                         <h2>Group Member</h2>
                         <p class="c1">Katilyn Hepler</p>
