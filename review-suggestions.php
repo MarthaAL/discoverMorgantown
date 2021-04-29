@@ -1,30 +1,57 @@
 <?php
-require 'includes/header.php';
+include 'includes/header.php';
+require 'includes/dbhandler.php';
 ?>
 
-<main>
-    <link rel="stylesheet" href="css/reviewsuggestions.css">
+<!DOCTYPE html>
+<html>
 
-    <h1>Review Suggestions</h1>
-    <div class="reviewsuggestions-container">
+<head>
+    <meta charset="utf-8">
+    <title>View Records</title>
+    <link rel="stylesheet" href="css/reviewsuggestions.css" />
+</head>
 
-        <?php
-            include_once 'includes/dbhandler.php';
-            $sql = "SELECT * FROM suggestions ORDER BY upload_date DESC";
-            $query = mysqli_query($conn, $sql);
-
-            while($row = mysqli_fetch_assoc($query)) {
-                echo '    <div class="card">
-                <a href="suggestions.php?id='.$row['sid'].'">
-                <h3>'.$row["name"].'</h3>
-                <p>'.$row["location"].'</p>
-                <p>'.$row["description"].'</p>
-                <p>'.$row["tags"].'</p>
-                </a>
-               </div>';
-            }
-        ?>
+<body>
+    <div class="form">
+        <h2>View Suggestions</h2>
+        <table width="100%" border="1" style="border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th><strong>S.No</strong></th>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Location</strong></th>
+                    <th><strong>Description</strong></th>
+                    <th><strong>Tags</strong></th>
+                    <th><strong>Upload Date</strong></th>
+                    <th><strong>Insert</strong></th>
+                    <th><strong>Delete</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+$count=1;
+$sel_query="Select * from suggestions ORDER BY id desc;";
+$result = mysqli_query($conn,$sel_query);
+while($row = mysqli_fetch_assoc($result)) { ?>
+                <tr>
+                    <td align="center"><?php echo $count; ?></td>
+                    <td align="center"><?php echo $row["name"]; ?></td>
+                    <td align="center"><?php echo $row["location"]; ?></td>
+                    <td align="center"><?php echo $row["description"]; ?></td>
+                    <td align="center"><?php echo $row["tags"]; ?></td>
+                    <td align="center"><?php echo $row["upload_date"]; ?></td>
+                    <td align="center">
+                        <a href="insert.php?id=<?php echo $row["id"]; ?>">Insert</a>
+                    </td>
+                    <td align="center">
+                        <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                    </td>
+                </tr>
+                <?php $count++; } ?>
+            </tbody>
+        </table>
     </div>
+</body>
 
-
-</main>
+</html>
