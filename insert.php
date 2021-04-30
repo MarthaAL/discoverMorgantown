@@ -67,8 +67,8 @@
             </div>
             
             <?php
-                $id = $_REQUEST['sid'];
-                $act_query="SELECT * FROM suggestions WHERE id=$id;";
+                $id = $_GET['id'];
+                $act_query="SELECT * FROM suggestions WHERE sid='$id';";
                 $result = mysqli_query($conn,$act_query);
                 $row = mysqli_fetch_assoc($result)
             ?>
