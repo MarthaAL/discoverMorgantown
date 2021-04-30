@@ -15,7 +15,7 @@
 <script>
 //Listens for click event on profile picture
 function triggered() {
-    document.querySelector("#act-image").click();
+    document.querySelector("#act-image1").click() or document.querySelector('#act-image2').click();
 }
 
 //When profile picture clicked on, opens file explorer and shows the new profile picture that the user selects
@@ -23,7 +23,7 @@ function preview(e) {
     if (e.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            document.querySelector('#act-display').setAttribute('src', e.target.result);
+            document.querySelector('#act-display1').setAttribute('src', e.target.result) or document.querySelector('#act-display2').setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(e.files[0]);
     }
