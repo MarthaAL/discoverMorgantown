@@ -13,7 +13,13 @@ html {
     margin: 10px;
     width: 62%
 }
-
+.cd-header h1 {
+  color: #ffffff;
+  line-height: 150px;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
 .index-container{
     text-align:center;
     display:flex;
@@ -26,14 +32,16 @@ html {
 }
 
 p {
-    color: black;
+    color: white;
 }
 h1{
-  color: black;
-}
-c1{
     color: black;
-}
+    margin: auto;
+    display: inline-block;
+    height: 90px;
+    font-size: 40px;
+  }
+
 .about {
     background: rgba(147,186,189,255);
     padding: 8px;
