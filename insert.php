@@ -18,7 +18,6 @@
         mysqli_query($conn,$ins_query)
         or die(mysql_error());
     }
-    header("Location: ../delete.php")
 ?>
 <!DOCTYPE html>
 <html>
