@@ -55,7 +55,6 @@ session_start();
             <?php if (isset($_SESSION['uid'])) {
 
                         echo '
-                        <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
                         <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
                         <li><a href="../suggestions.php"><p style="padding: 18px;">Suggestions</p></a></li>
                         <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
@@ -64,7 +63,6 @@ session_start();
                     else {
 
                         echo '
-                        <li><a href="../home.php"><p style="padding: 18px;">Home</p></a></li>
                         <li><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
                         <li><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
                         <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
