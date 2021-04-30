@@ -31,7 +31,7 @@ require 'includes/dbhandler.php';
             <tbody>
                 <?php
 $count=1;
-$sel_query="SELECT * FROM suggestions ORDER BY id DESC;";
+$sel_query="SELECT * FROM suggestions ORDER BY sid DESC;";
 $result = mysqli_query($conn,$sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
