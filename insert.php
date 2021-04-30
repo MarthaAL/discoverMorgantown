@@ -14,8 +14,12 @@
 
 <script>
 //Listens for click event on profile picture
-function triggered() {
-    document.querySelector("#act-image1").click() or document.querySelector('#act-image2').click();
+function triggered1() {
+    document.querySelector("#act-image1").click();
+}
+
+function triggered2() {
+    document.querySelector('#act-image2').click()
 }
 
 //When profile picture clicked on, opens file explorer and shows the new profile picture that the user selects
@@ -23,7 +27,7 @@ function preview(e) {
     if (e.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            document.querySelector('#act-display1').setAttribute('src', e.target.result) or document.querySelector('#act-display2').setAttribute('src', e.target.result);
+            document.querySelector('#act-display').setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(e.files[0]);
     }
@@ -36,11 +40,11 @@ function preview(e) {
         <form name="form" method="post" action="includes/activityupload-helper.php">
             <input type="hidden" name="new" value="1" />
             <div class="form-group">
-                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display1">
-                <input type="file" name="pic1" id="act-image1" onchange="preview[this]" class="form-control"
+                <img src="images/default.png" alt="profile pic" onclick="triggered1();" id="act-display">
+                <input type="file" name="pic1" id="act-image1" onchange="preview(this)" class="form-control"
                     style="display: none;">
-                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display2">
-                <input type="file" name="pic2" id="act-image2" onchange="preview[this]" class="form-control"
+                <img src="images/default.png" alt="profile pic" onclick="triggered2();" id="act-display">
+                <input type="file" name="pic2" id="act-image2" onchange="preview(this)" class="form-control"
                     style="display: none;">
             </div>
 
