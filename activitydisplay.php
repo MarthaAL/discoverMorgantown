@@ -21,7 +21,7 @@ require 'includes/header.php';
     ?>
 
 
-<!--<link rel="stylesheet" href="../css/test2.css"> -->
+
 <html>
 <link rel="stylesheet" href="/css/activitydisplay.css">
 
@@ -67,16 +67,16 @@ require 'includes/header.php';
     <div class="w3-col l8 s12">
         <div class="w3-card-4 w3-margin">
         
-        <!-- Details Card -->
-         <div class="w3-container">
-             <h>Details:</h>
-              <sh class="w3-opacity"> <br>Last Updated: April 26, 2021 </sh>
+            <!-- Details Card for description -->
+            <div class="w3-container">
+                <h>Details:</h>
+                <sh class="w3-opacity"> <br>Last Updated: April 26, 2021 </sh>
             </div>
         
             <div class="w3-container2">
                 <p>  <?php echo $descript ?> 
                     <br>         </p>
-
+         <!-- Checks to see if their is a cost value to display -->
                 <p0> <?php  $costdisplay = 'Cost: ';
                             if($cost == 0){
                                     $cost = null;
@@ -89,7 +89,7 @@ require 'includes/header.php';
                                     ?>  </p0>
                
                <p1> <?php echo $cost ?> <br></p1>
-
+            <!-- Checks to see if their is a fakes value to display -->
                 <p0> <?php  $fakesdisplay = 'Fakes: ';
                             if($fakes == 0){
                                     $fakes = null;
@@ -105,20 +105,54 @@ require 'includes/header.php';
 
             </div>
         </div>
-        <!-- Reviews Card -->
+        <!-- Creates Comments Card -->
         <div class="w3-card-4 w3-margin">
         
             <div class="w3-container">
-             <h>Reviews</h>
-             
+                <h>Comments</h>
             </div>
         
             <div class="w3-container2">
-                <p>This Feature may or may not be Coming Soon!!!!
-                </p>
+                        <!-- Shows comments from database in descending order-->
+                         
+                <?php
+                    include_once 'includes/dbhandler.php';
+                           
+                    $sql = "SELECT * FROM comments WHERE itemid = $activityid ORDER BY posted DESC";
+                    $query = mysqli_query($conn, $sql);
+
+                    while($row = mysqli_fetch_assoc($query)){
+                        echo '<div class = "w3-card-4"> 
+                        <img class = "img3"  src= "'.$row['profpic'].'">
+                        <pname>'.$row["profname"].'</pname>
+                        <posted>'.$row["posted"].'</posted>
+                        <comments>'.$row['comments'].'</comments>
+                        </div>';
+                     }
+                ?>
+                        
+             <!-- Creates comment box-->
+                <div class="container" align="center" style="max-width: 800px;">
+                    <div class="my-auto">
+
+                    <form id="comments-form" action="includes/comments-helper.php" method="post">
+                        <div class="form-group" style = "margin-top: 15px;">
+                            <textarea name="comments" id="comments-text" cols="50" rows="3" placeholder="Enter a comment..."></textarea>
+                            <input type="hidden" name="itemid" value="1">
+                        </div>
+
+                        <div class="form-group" style = "margin-bottom: 10px;">
+                        <!-- Creates comment button-->
+                            <button class="btn btn-outline-danger" type="submit" name="comments-submit" id="comments-submit" style="width: 20%, height: 120%">Comment</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+                    
         </div>
     </div>
+</div>
+                
 
 
 <!-- Location + Info Card -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 21, 2021 at 08:32 PM
+-- Generation Time: Apr 30, 2021 at 02:47 PM
 -- Server version: 5.7.33-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -28,15 +28,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `activities` (
   `itemid` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text NOT NULL,
-  `location` varchar(75) NOT NULL,
+  `name` varchar(50) CHARACTER SET utf16 NOT NULL,
+  `description` text CHARACTER SET utf16 NOT NULL,
+  `location` varchar(75) CHARACTER SET utf16 NOT NULL,
   `open` time NOT NULL,
   `close` time NOT NULL,
   `cost` int(3) NOT NULL,
-  `pic1` varchar(50) NOT NULL,
-  `pic2` varchar(50) NOT NULL,
-  `tags` varchar(50) NOT NULL,
+  `pic1` varchar(50) CHARACTER SET utf16 NOT NULL,
+  `pic2` varchar(50) CHARACTER SET utf16 NOT NULL,
+  `tags` varchar(50) CHARACTER SET utf16 NOT NULL,
   `fakes` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -45,7 +45,31 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`itemid`, `name`, `description`, `location`, `open`, `close`, `cost`, `pic1`, `pic2`, `tags`, `fakes`) VALUES
-(1, 'White Park', 'White Park, also the home of the Morgantown Ice Arena, is a 170-acre park that serves as a hub for many athletic activities.  The park includes four adult softball fields and two youth baseball fields, a pavilion, and a small play area adjacent to the pavilion with swings and a slide.  Five miles of wooded trails interspersed throughout the park are used by hikers, bikers and wildlife enthusiasts. Additionally, White Park is home to a waterfall along one of it\'s trails.', 'White Park, 1001 Mississippi St, Morgantown, WV 26501', '08:30:00', '04:30:00', 1, '', '', 'outdoor', 1);
+(1, 'White Park', 'White Park is one of the most beautiful spots in Morgantown. White Park has various attractions including a waterfall, many trails, tons of baseball fields, and tons of space, making it a perfect place to go with friends or family. ', '1001 Mississippi St, Morgantown, WV 26501', '08:30:00', '04:30:00', 0, '../images/WhitePark.jpeg', '../images/WhitePark2.jpeg', 'Outdoor', 0),
+(2, 'D.P. Dough', 'A great place to get a calzone with just about anything you could ever imagine in it, almost anytime as it is open until 3-4 AM everyday! Not only do they have delicious calzones, but they have wings, tots, breadsticks, and more! ', '408 High ST, Morgantown, WV 26505', '11:00:00', '04:00:00', 1, '../images/DPDough.jpeg', '../images/DPDough2.jpeg', 'Restaurants', 0),
+(3, 'Cheat Lake Park and Trail', 'Just outside of Morgantown, Cheat Lake Park has multiple picnic area\'s, a beach area for swimming, a fishing pier, fish cleaning stations, and playgrounds.It is also home to an amazing trail that is 4.5 mile long and follows the Lake Lynn shoreline. ', 'Cheat Lake Trail, Cheat Lake, WV 26508', '07:30:00', '06:00:00', 0, '../images/cheatLake.jpeg', '../images/cheatLake2.jpeg', 'Outdoor', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `comments` varchar(200) CHARACTER SET utf16 NOT NULL,
+  `profpic` varchar(80) CHARACTER SET utf16 NOT NULL,
+  `profname` varchar(25) CHARACTER SET utf16 NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `posted` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`comments`, `profpic`, `profname`, `itemid`, `posted`) VALUES
+('hey', '../images/default.png', 'mtowey', 1, '2021-04-30 17:24:39'),
+('heyyy', '../images/default.png', 'mtowey', 1, '2021-04-30 17:29:39');
 
 -- --------------------------------------------------------
 
@@ -131,7 +155,8 @@ INSERT INTO `profiles` (`pid`, `fname`, `lname`, `uname`, `email`, `profpic`) VA
 (6, 'kate', '.', 'kate', '1@1.com', '../images/default.png'),
 (7, 'Delaney', 'Irwin', 'dmi0003', 'dmi0003@mix.wvu.edu', '../images/default.png'),
 (8, 'Harley', 'Frazee', 'hpf0004', 'hpf0004@mix.wvu.edu', '../images/default.png'),
-(9, 'Callyn', 'Zeigler', 'callyn', 'cal@cal.com', '../images/default.png');
+(9, 'Callyn', 'Zeigler', 'callyn', 'cal@cal.com', '../images/default.png'),
+(10, 'Matt', 'Towey', 'mtowey', 'mtowey@123.com', '../images/default.png');
 
 -- --------------------------------------------------------
 
@@ -220,7 +245,8 @@ INSERT INTO `users` (`uid`, `fname`, `lname`, `uname`, `password`, `email`) VALU
 (6, 'kate', '.', 'kate', '$2y$10$9VH6QMtsCpAGZYvgC1wYYubpkEKmgC8iTM/i0.i9EBbr0JUHFaqEm', '1@1.com'),
 (7, 'Delaney', 'Irwin', 'dmi0003', '$2y$10$i9qwoQZodEeRgs1uEDBlKOGLMtZCLqf5HwbalaU5Dm0xrcTVdNzCq', 'dmi0003@mix.wvu.edu'),
 (8, 'Harley', 'Frazee', 'hpf0004', '$2y$10$pZ/zWp7XIrjU8wAgjA4qQ.lqeVZ/CzrY1US9wp60HdDPhvGZeCqdO', 'hpf0004@mix.wvu.edu'),
-(9, 'Callyn', 'Zeigler', 'callyn', '$2y$10$r/FtNXK8N3574j/XbWqsZO60SapC.TrP7RmxRxJuXnwtEYMsnvxsO', 'cal@cal.com');
+(9, 'Callyn', 'Zeigler', 'callyn', '$2y$10$r/FtNXK8N3574j/XbWqsZO60SapC.TrP7RmxRxJuXnwtEYMsnvxsO', 'cal@cal.com'),
+(10, 'Matt', 'Towey', 'mtowey', '$2y$10$SJH8RNBVzcyDCbQjcbccruk0/XNVPQoxain44J2YArCyE0OWioLBC', 'mtowey@123.com');
 
 -- --------------------------------------------------------
 
@@ -249,6 +275,12 @@ CREATE TABLE `volunteer` (
 --
 ALTER TABLE `activities`
   ADD PRIMARY KEY (`itemid`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`comments`);
 
 --
 -- Indexes for table `favorites`
@@ -327,7 +359,7 @@ ALTER TABLE `outdoor`
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `restraunts`
 --
@@ -347,7 +379,7 @@ ALTER TABLE `suggestions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `volunteer`
 --

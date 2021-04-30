@@ -9,6 +9,9 @@ main{
 .w3-container2{
     background-color: white;
 }
+.comments-container{
+    background-color: white;
+}
 /* Left image */
  .img1{
     display: flex; 
@@ -88,5 +91,25 @@ p1{
 hours{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+}
+.img3{
+    display: inline;
+    max-width: 75px; max-height:75px; border-radius: 50%;
+    
+}
+pname{
+    font-size: 16pt;
+    display:inline;
+    color: rgb(70, 70, 70);
+    text-align: left;
+    
+    margin-left: 25px;
+    margin-right: 25px;
+}
+posted{
+    display:inline;
+}
+comments{
+    margin-left: 200px;
 }
 
