@@ -15,7 +15,7 @@
                     <img src="images/AlexRoyce.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Alex Royce</p>
+                        <h1 class="c1">Alex Royce</h1>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     <img src=".jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Callyn Zeigler</p>
+                        <h1 class="c1">Callyn Zeigler</h1>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <img src="images/HarleyFrazee.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Harley Frazee</p>
+                        <h1 class="c1">Harley Frazee</h1>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <img src="images/HeatherFetty.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Heather Fetty</p>
+                        <h1 class="c1">Heather Fetty</h1>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <img src="images/KatilynHepler.jpeg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Katilyn Hepler</p>
+                        <h1 class="c1">Katilyn Hepler</h1>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     <img src="images/Martha.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Martha</p>
+                        <h1 class="c1">Martha</h1>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                     <img src="images/MattTowey.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Matt Towey</p>
+                        <h1 class="c1">Matt Towey</h1>
                     </div>
                 </div>
             </div>
@@ -92,8 +92,7 @@
                     <img src="images/DelaneyIrwin.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <p class="c1">Delaney Irwin</p>
-                        <p>Email: dmi0003@mix.wvu.edu</p>
+                        <h1 class="c1">Delaney Irwin</h1>
                     </div>
                 </div>
             </div>
