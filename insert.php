@@ -2,7 +2,6 @@
     require 'includes/dbhandler.php';
     include "includes/header.php" ;
     
-    // Needs edited
     if(isset($_POST['new']) && $_POST['new']==1){
         $name = $_REQUEST['actname'];
         $location = $_REQUEST['actlocation'];
@@ -13,7 +12,7 @@
         $fakes = $_REQUEST['fakes'];
         $ins_query="INSERT INTO activities
         (`name`,`location`,`description`, `open`, `close`, `tags`, `fakes`) VALUES
-        ('$name','$location','$description','$open', '$close', '$tags', '$fakes')";
+        ('$name','$location','$description','$open', '$close', '$tags', '$fakes');";
         mysqli_query($conn,$ins_query)
         or die(mysql_error());
     }
@@ -31,23 +30,45 @@
     <link rel="stylesheet" href="css/reviewsuggestions.css" />
 </head>
 
+<script>
+    //Listens for click event on profile picture
+    function triggered() 
+    {
+        document.querySelector("#act-image").click();
+    }
+
+    //When profile picture clicked on, opens file explorer and shows the new profile picture that the user selects
+    function preview(e) 
+    {
+        if (e.files[0]) 
+        {
+            var reader = new FileReader();
+            reader.onload = function(e) 
+            {
+                document.querySelector('#act-display').setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(e.files[0]);
+        }
+    }
+</script>
+
 <body>
     <div class="form">
         <h1>Insert New Activity</h1>
         <form name="form" method="post" action="">
             <input type="hidden" name="new" value="1" />
             <div class="form-group">
-                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="prof-display">
-                <input type="file" name="pic1" id="prof-image" onchange="preview[this]" class="form-control"
+                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display">
+                <input type="file" name="pic1" id="act-image" onchange="preview[this]" class="form-control"
                     style="display: none;">
-                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="prof-display">
-                <input type="file" name="pic2" id="prof-image" onchange="preview[this]" class="form-control"
+                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display">
+                <input type="file" name="pic2" id="act-image" onchange="preview[this]" class="form-control"
                     style="display: none;">
             </div>
             
             <?php
                 $id = $_REQUEST['sid'];
-                $act_query="SELECT * FROM suggestions WHERE sid=$id;";
+                $act_query="SELECT * FROM suggestions WHERE id=$id;";
                 $result = mysqli_query($conn,$act_query);
                 $row = mysqli_fetch_assoc($result)
             ?>
