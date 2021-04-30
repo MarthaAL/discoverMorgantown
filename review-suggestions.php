@@ -31,7 +31,7 @@ require 'includes/dbhandler.php';
             <tbody>
                 <?php
 $count=1;
-$sel_query="Select * from suggestions ORDER BY id desc;";
+$sel_query="SELECT * FROM suggestions ORDER BY id DESC;";
 $result = mysqli_query($conn,$sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
@@ -42,10 +42,10 @@ while($row = mysqli_fetch_assoc($result)) { ?>
                     <td align="center"><?php echo $row["tags"]; ?></td>
                     <td align="center"><?php echo $row["upload_date"]; ?></td>
                     <td align="center">
-                        <a href="insert.php?id=<?php echo $row["id"]; ?>">Insert</a>
+                        <a href="insert.php?id=<?php echo $row["sid"]; ?>">Insert</a>
                     </td>
                     <td align="center">
-                        <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
+                        <a href="delete.php?id=<?php echo $row["sid"]; ?>">Delete</a>
                     </td>
                 </tr>
                 <?php $count++; } ?>
