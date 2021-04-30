@@ -31,16 +31,17 @@ html {
     box-sizing: inherit;
 }
 
-p {
-    color: black;
-}
 h1{
-    color: black;
+    color: white;
     margin: auto;
     display: inline-block;
     height: 90px;
     font-size: 40px;
   }
+
+.c1{
+    color: black;
+}
 
 .about {
     background: rgba(147,186,189,255);

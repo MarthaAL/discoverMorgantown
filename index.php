@@ -70,7 +70,7 @@
                     <img src="images/Martha.jpg">
                     <div class="container">
                         <h2>Group Member</h2>
-                        <h1 class="c1">Martha</h1>
+                        <h1 class="c1">Martha Lacek</h1>
                     </div>
                 </div>
             </div>
