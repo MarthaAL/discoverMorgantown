@@ -1,11 +1,6 @@
 <?php
     require 'includes/dbhandler.php';
     include "includes/header.php" ;
-
-    $id=$_REQUEST['sid'];
-    $act_sql = "SELECT * FROM suggestions WHERE sid=$id";
-    $result = mysqli_query($conn,$sel_query);
-    $row = mysqli_fetch_assoc($result);
     
     // Needs edited
     if(isset($_POST['new']) && $_POST['new']==1){
@@ -41,25 +36,36 @@
         <h1>Insert New Activity</h1>
         <form name="form" method="post" action="">
             <input type="hidden" name="new" value="1" />
-            <div class="image">
-                <img src="images/default.png" class="rounded" width="155" alt="profile pic" onclick="triggered();"
-                    id="pic1">
-                <img src="images/default.png" class="rounded" width="155" alt="profile pic" onclick="triggered();"
-                    id="pic2">
+            <div class="form-group">
+                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="prof-display">
+                <input type="file" name="pic1" id="prof-image" onchange="preview[this]" class="form-control"
+                    style="display: none;">
+                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="prof-display">
+                <input type="file" name="pic2" id="prof-image" onchange="preview[this]" class="form-control"
+                    style="display: none;">
             </div>
-            <input type="file" name="prof-image" id="prof-image" onchange="preview(this)" class="form-control" style="display: none;">
+            
+            <?php
+                $id = $_REQUEST['sid'];
+                $act_query="SELECT * FROM suggestions WHERE sid=$id;";
+                $result = mysqli_query($conn,$act_query);
+                $row = mysqli_fetch_assoc($result)
+            ?>
 
-            <p><input type="text" name="actname" placeholder="Enter Name" value="<?php echo $row['name'] ?>" required /></p>
-            <p><input type="text" name="actdescription" placeholder="Enter Description" value="<?php echo $row['description'] ?>"
-                    required /></p>
+            <p><input type="text" name="actname" placeholder="Enter Name" value="<?php echo $row['name'] ?>" required />
+            </p>
+            <p><input type="text" name="actdescription" placeholder="Enter Description"
+                    value="<?php echo $row['description'] ?>" required /></p>
             <p><input type="text" name="actlocation" placeholder="Enter Location" value="<?php echo $row['location'] ?>"
                     required /></p>
             <p><input type="text" name="open" placeholder="Enter Opening Time" required /></p>
             <p><input type="text" name="close" placeholder="Enter Closing Time" required /></p>
-            <p><input type="text" name="acttags" placeholder="Enter Tag(s)" value="<?php echo $row['tags'] ?>" required /></p>
+            <p><input type="text" name="acttags" placeholder="Enter Tag(s)" value="<?php echo $row['tags'] ?>"
+                    required /></p>
             <p><input type="text" name="fakes" placeholder="Enter Fakes" required /></p>
             <div class="form-group">
-                <button type="submit" name="activity-submit" class="btn btn-lg btn-outline-warning btn-block">Insert Activity</button>
+                <button type="submit" name="activity-submit" class="btn btn-lg btn-outline-warning btn-block">Insert
+                    Activity</button>
             </div>
         </form>
     </div>
