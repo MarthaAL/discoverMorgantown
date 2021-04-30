@@ -34,7 +34,7 @@
 
         $allowed = array('jpg', 'jpeg', 'png', 'svg');
 
-        if ($file_error1 !== 0 && $fileerror2 !== 0) 
+        if ($file_error1 !== 0 && $file_error2 !== 0) 
         {
             header("Location: ../insert.php?error=UploadError");
             exit();
