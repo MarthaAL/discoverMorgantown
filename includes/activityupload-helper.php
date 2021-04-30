@@ -34,19 +34,19 @@
 
         $allowed = array('jpg', 'jpeg', 'png', 'svg');
 
-        if ($file_error1 !== 0 && $file_error2 !== 0) 
+        if ($file_error1 !== 0 || $file_error2 !== 0) 
         {
             header("Location: ../insert.php?error=UploadError");
             exit();
         }
 
-        if (!in_array($ext1, $allowed) && !in_array($ext2, $allowed)) 
+        if (!in_array($ext1, $allowed) || !in_array($ext2, $allowed)) 
         {
             header("Location: ../insert.php?error=InvalidType");
             exit();
         }
 
-        if ($file_size1 > 4*MB && $file_size2 > 4*MB) 
+        if ($file_size1 > 4*MB || $file_size2 > 4*MB) 
         {
             header("Location: ../insert.php?error=FileSizeExceeded");
             exit();
