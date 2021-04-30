@@ -1,26 +1,8 @@
 <?php
     require 'includes/dbhandler.php';
     include "includes/header.php" ;
-    
-    if(isset($_POST['new']) && $_POST['new']==1){
-        $name = $_REQUEST['actname'];
-        $location = $_REQUEST['actlocation'];
-        $description = $_REQUEST["actdescription"];
-        $open = $_REQUEST['open'];
-        $close = $_REQUEST['close'];
-        $tags = $_REQUEST['acttags'];
-        $fakes = $_REQUEST['fakes'];
-        $ins_query="INSERT INTO activities
-        (`name`,`location`,`description`, `open`, `close`, `tags`, `fakes`) VALUES
-        ('$name','$location','$description','$open', '$close', '$tags', '$fakes');";
-        mysqli_query($conn,$ins_query)
-        or die(mysql_error());
-    }
-
-    if(isset($_POST['activity-submit'])) {
-        header("Location: delete.php");
-    }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,41 +13,37 @@
 </head>
 
 <script>
-    //Listens for click event on profile picture
-    function triggered() 
-    {
-        document.querySelector("#act-image").click();
-    }
+//Listens for click event on profile picture
+function triggered() {
+    document.querySelector("#act-image").click();
+}
 
-    //When profile picture clicked on, opens file explorer and shows the new profile picture that the user selects
-    function preview(e) 
-    {
-        if (e.files[0]) 
-        {
-            var reader = new FileReader();
-            reader.onload = function(e) 
-            {
-                document.querySelector('#act-display').setAttribute('src', e.target.result);
-            }
-            reader.readAsDataURL(e.files[0]);
+//When profile picture clicked on, opens file explorer and shows the new profile picture that the user selects
+function preview(e) {
+    if (e.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.querySelector('#act-display').setAttribute('src', e.target.result);
         }
+        reader.readAsDataURL(e.files[0]);
     }
+}
 </script>
 
 <body>
     <div class="form">
         <h1>Insert New Activity</h1>
-        <form name="form" method="post" action="">
+        <form name="form" method="post" action="includes/activityupload-helper.php">
             <input type="hidden" name="new" value="1" />
             <div class="form-group">
-                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display">
-                <input type="file" name="pic1" id="act-image" onchange="preview[this]" class="form-control"
+                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display1">
+                <input type="file" name="pic1" id="act-image1" onchange="preview[this]" class="form-control"
                     style="display: none;">
-                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display">
-                <input type="file" name="pic2" id="act-image" onchange="preview[this]" class="form-control"
+                <img src="images/default.png" alt="profile pic" onclick="triggered();" id="act-display2">
+                <input type="file" name="pic2" id="act-image2" onchange="preview[this]" class="form-control"
                     style="display: none;">
             </div>
-            
+
             <?php
                 $id = $_GET['id'];
                 $act_query="SELECT * FROM suggestions WHERE sid='$id';";
