@@ -2,7 +2,7 @@
     require 'includes/dbhandler.php';
     include "includes/header.php" ;
 
-    $id = $_GET['sid'];
+    $id=$_REQUEST['sid'];
     $act_sql = "SELECT * FROM suggestions WHERE sid=$id";
     $result = mysqli_query($conn,$sel_query);
     $row = mysqli_fetch_assoc($result);
