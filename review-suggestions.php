@@ -4,7 +4,7 @@ require 'includes/dbhandler.php';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 
 <head>
     <meta charset="utf-8">
@@ -16,16 +16,17 @@ require 'includes/dbhandler.php';
     <div class="form">
         <h2>View Suggestions</h2>
         <table width="100%" border="1" style="border-collapse:collapse;">
+            <caption>Shows each suggestion from the suggestions table to be inserted into the activities table or deleted.</caption>
             <thead>
                 <tr>
-                    <th><strong>S.No</strong></th>
-                    <th><strong>Name</strong></th>
-                    <th><strong>Location</strong></th>
-                    <th><strong>Description</strong></th>
-                    <th><strong>Tags</strong></th>
-                    <th><strong>Upload Date</strong></th>
-                    <th><strong>Insert</strong></th>
-                    <th><strong>Delete</strong></th>
+                    <th id="suggestion-id-number"><strong>S.No</strong></th>
+                    <th id="activity-name"><strong>Name</strong></th>
+                    <th id="activity-location"><strong>Location</strong></th>
+                    <th id="activity-description"><strong>Description</strong></th>
+                    <th id="activity-tags"><strong>Tags</strong></th>
+                    <th id="suggestion-upload-date"><strong>Upload Date</strong></th>
+                    <th id="suggestion-insert"><strong>Insert</strong></th>
+                    <th id="suggestion-delete"><strong>Delete</strong></th>
                 </tr>
             </thead>
             <tbody>
