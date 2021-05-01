@@ -1,6 +1,18 @@
 <?php
 include 'includes/header.php';
 require 'includes/dbhandler.php';
+isLoggedIn();
+
+$uname = $_SESSION['uname'];
+$sqlpro = "SELECT * FROM users WHERE uname='$uname';";
+$res = mysqli_query($conn, $sqlpro);
+$row = mysqli_fetch_array($res);
+$admin = $row['admin'];
+
+    if($admin != 1){
+        header("Location: ../mustbeadmin.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -57,3 +69,7 @@ while($row = mysqli_fetch_assoc($result)) { ?>
 </body>
 
 </html>
+
+<?php
+include 'includes/footer.php';
+?>

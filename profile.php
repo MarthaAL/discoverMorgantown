@@ -5,6 +5,7 @@
 
 require 'includes/header.php';
 require 'includes/dbhandler.php';
+isLoggedIn();
 ?>
 
 <link rel="stylesheet" href="css/profile.css">
@@ -74,4 +75,8 @@ require 'includes/dbhandler.php';
 
 <?php
         }
+?>
+
+<?php
+include 'includes/footer.php';
 ?>

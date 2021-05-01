@@ -1,5 +1,6 @@
 <?php 
 require 'includes/dbhandler.php';
+require 'includes/login-check.php';
 session_start();
 
 ?>
@@ -50,21 +51,34 @@ session_start();
         </ul>
         <ul style="margin-top: -75px;">
             <?php if (isset($_SESSION['uid'])) {
-
+                //Get admin status
+                $uname = $_SESSION['uname'];
+                $sqlpro = "SELECT * FROM users WHERE uname='$uname';";
+                $res = mysqli_query($conn, $sqlpro);
+                $row = mysqli_fetch_array($res);
+                $admin = $row['admin'];
+                
+                    if($admin == 1){
+                        echo '
+                        <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
+                        <li><a href="../review-suggestions.php"><p style="padding: 18px;">Review Suggestions</p></a></li>
+                        <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
+                    }
+                    else{
                         echo '
                         <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
                         <li><a href="../suggestions.php"><p style="padding: 18px;">Suggestions</p></a></li>
                         <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
                     }
+                }
 
-                    else {
-
-                        echo '
-                        <li><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
-                        <li><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
-                    }
-                    ?>        
+                else {
+                    echo '
+                    <li><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
+                    <li><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
+                    <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
+                }
+            ?>        
         </ul>
         </nav>
         <ul class="right" style="margin-left: -100px; padding-left: 0px; margin-top: -75px;">

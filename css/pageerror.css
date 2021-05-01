@@ -1,0 +1,14 @@
+body {
+    background-image: url("../images/login-bg.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+
+.message{
+    color: rgb(0, 40, 85);
+    font: bolder;
+    font-size: 40px;
+}

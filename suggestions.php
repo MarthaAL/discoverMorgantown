@@ -1,5 +1,6 @@
 <?php
-    require "includes/header.php" // header for all webpages
+    require "includes/header.php"; // header for all webpages
+    isLoggedIn();
 ?>
 
 <body>
@@ -47,3 +48,7 @@
         </div>
     </div>
 </body>
+
+<?php
+include 'includes/footer.php';
+?>

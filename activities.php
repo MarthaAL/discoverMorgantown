@@ -1,6 +1,7 @@
 <!doctype html>
 <?php
 require 'includes/header.php';
+isLoggedIn();
 ?>
 <html lang="en" class="no-js">
 <head>
@@ -114,3 +115,7 @@ require 'includes/header.php';
 
 </body>
 </html>
+
+<?php
+include 'includes/footer.php';
+?>

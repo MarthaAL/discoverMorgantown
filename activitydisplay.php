@@ -1,5 +1,6 @@
 <?php
 require 'includes/header.php';
+isLoggedIn();
 
 
     include_once 'includes/dbhandler.php';
@@ -213,3 +214,7 @@ require 'includes/header.php';
 </div>
 </main>
 </html>
+
+<?php
+include 'includes/footer.php';
+?>
