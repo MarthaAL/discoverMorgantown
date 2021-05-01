@@ -36,9 +36,6 @@ session_start();
 
     </script>
 
-    <script src="https://kit.fontawesome.com/0809ee8fa6.js" crossorigin="anonymous"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
