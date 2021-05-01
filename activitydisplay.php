@@ -133,7 +133,7 @@ require 'includes/header.php';
                 ?>
                         
              <!-- Creates comment box-->
-                <div class="container" align="center" style="max-width: 800px;">
+                <div class="container"  style="max-width: 800px;">
                     <div class="my-auto">
 
                     <form id="comments-form" action="includes/comments-helper.php" method="post">
