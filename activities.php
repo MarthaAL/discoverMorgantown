@@ -4,6 +4,8 @@ require 'includes/header.php';
 ?>
 <html lang="en" class="no-js">
 <head>
+	<title>Activity Gallery</title>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
