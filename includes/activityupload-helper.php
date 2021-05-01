@@ -16,8 +16,8 @@
         $tags = $_POST['acttags'];
         $fakes = $_POST['fakes'];
         
-        $file1 = $_FILES['act-image1'];
-        $file2 = $_FILES['act-image2'];
+        $file1 = $_FILES['pic1'];
+        $file2 = $_FILES['pic2'];
 
         $file_name1 = $file1['name1'];
         $file_tmp_name1 = $file1['tmp_name1'];
