@@ -15,8 +15,8 @@ require 'includes/dbhandler.php';
 <body>
     <div class="form">
         <h2>View Suggestions</h2>
-        <table width="100%" border="1" style="border-collapse:collapse;">
-            <caption>Shows each suggestion from the suggestions table to be inserted into the activities table or deleted.</caption>
+        <table style="border-collapse:collapse;">
+            <caption style="text-align: center;">Shows each suggestion from the suggestions table to be inserted into the activities table or deleted.</caption>
             <thead>
                 <tr>
                     <th id="suggestion-id-number"><strong>S.No</strong></th>
@@ -36,20 +36,21 @@ $sel_query="SELECT * FROM suggestions ORDER BY sid ASC;";
 $result = mysqli_query($conn,$sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
-                    <td align="center"><?php echo $count; ?></td>
-                    <td align="center"><?php echo $row['name']; ?></td>
-                    <td align="center"><?php echo $row['location']; ?></td>
-                    <td align="center"><?php echo $row['description']; ?></td>
-                    <td align="center"><?php echo $row['tags']; ?></td>
-                    <td align="center"><?php echo $row['upload_date']; ?></td>
-                    <td align="center">
+                    <td><?php echo $count; ?></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['location']; ?></td>
+                    <td><?php echo $row['description']; ?></td>
+                    <td><?php echo $row['tags']; ?></td>
+                    <td><?php echo $row['upload_date']; ?></td>
+                    <td>
                         <a href="insert.php?id=<?php echo $row['sid']; ?>">Insert</a>
                     </td>
-                    <td align="center">
+                    <td>
                         <a href="delete.php?id=<?php echo $row['sid']; ?>">Delete</a>
                     </td>
                 </tr>
-                <?php $count++; } ?>
+                <?php $count++; 
+              } ?>
             </tbody>
         </table>
     </div>
