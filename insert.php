@@ -58,7 +58,7 @@ function preview2(e) {
 <body>
     <div class="form">
         <h1>Insert New Activity</h1>
-        <form name="form" method="post" action="includes/activityupload-helper.php">
+        <form name="form" method="post" action="includes/activityupload-helper.php" enctype="multipart/form-data">
             <input type="hidden" name="new" value="1" />
             <div class="form-group">
                 <img src="images/default.png" alt="profile pic" onclick="triggered1();" id="act-display1">
@@ -70,7 +70,7 @@ function preview2(e) {
             </div>
 
             <?php
-                $id = $_GET['id'];
+                $id = $_GET['sid'];
                 $act_query="SELECT * FROM suggestions WHERE sid='$id';";
                 $result = mysqli_query($conn,$act_query);
                 $row = mysqli_fetch_assoc($result)
@@ -82,6 +82,7 @@ function preview2(e) {
                     value="<?php echo $row['description'] ?>" required /></p>
             <p><input type="text" name="actlocation" placeholder="Enter Location" value="<?php echo $row['location'] ?>"
                     required /></p>
+            <p><input type="text" name="cost" placeholder="Enter the Cost" required /></p>
             <p><input type="text" name="open" placeholder="Enter Opening Time" required /></p>
             <p><input type="text" name="close" placeholder="Enter Closing Time" required /></p>
             <p><input type="text" name="acttags" placeholder="Enter Tag(s)" value="<?php echo $row['tags'] ?>"
