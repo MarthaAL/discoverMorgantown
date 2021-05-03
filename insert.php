@@ -73,21 +73,24 @@ function preview2(e) {
                 $id = $_GET['id'];
                 $act_query="SELECT * FROM suggestions WHERE sid='$id';";
                 $result = mysqli_query($conn,$act_query);
-                $row = mysqli_fetch_assoc($result)
+                $row = mysqli_fetch_assoc($result);
+
+                $name = $row['name'];
+                $description = $row['description'];
+                $location = $row['location'];
+                $tags = $row['tags'];
             ?>
 
-            <p><input type="text" name="actname" placeholder="Enter Name" value="<?php echo $row['name'] ?>" required />
+            <p><input type="text" name="actname" placeholder="Enter Name" value=<?php echo $name?> required />
             </p>
-            <p><input type="text" name="actdescription" placeholder="Enter Description"
-                    value="<?php echo $row['description'] ?>" required /></p>
-            <p><input type="text" name="actlocation" placeholder="Enter Location" value="<?php echo $row['location'] ?>"
-                    required /></p>
+            <p><input type="text" name="actdescription" placeholder="Enter Description" value=<?php echo $description?> required /></p>
+            <p><input type="text" name="actlocation" placeholder="Enter Location" value=<?php echo $location?> required /></p>
             <p><input type="text" name="cost" placeholder="Enter the Cost" required /></p>
             <p><input type="text" name="open" placeholder="Enter Opening Time" required /></p>
             <p><input type="text" name="close" placeholder="Enter Closing Time" required /></p>
-            <p><input type="text" name="acttags" placeholder="Enter Tag(s)" value="<?php echo $row['tags'] ?>"
-                    required /></p>
+            <p><input type="text" name="acttags" placeholder="Enter Tag(s)" value=<?php echo $tags?> required /></p>
             <p><input type="text" name="fakes" placeholder="Enter Fakes" required /></p>
+            <p><input type="hidden" name="id" value="<?php echo $id ?>"/></p>
             <div class="form-group">
                 <button type="submit" name="activity-submit" class="btn btn-lg btn-outline-warning btn-block">Insert
                     Activity</button>

@@ -16,6 +16,7 @@
         $close = $_POST['close'];
         $tags = $_POST['acttags'];
         $fakes = $_POST['fakes'];
+        $id = $_POST['id'];
         
         $file1 = $_FILES['pic1'];
         $file2 = $_FILES['pic2'];
@@ -60,13 +61,13 @@
             $destination1 = 'activity-images/'.$new_name1;
             $destination2 = 'activity-images/'.$new_name2;
 
-            $sql = "INSERT INTO activities ([name], [description], [location], [open], [close], cost, pic1, pic2, tags, fakes) VALUES ('$name', '$description', '$location', '$open', '$close', $cost, '$destination1', '$destination2', '$tags', $fakes)";
+            $sql = "INSERT INTO activities (name, description, location, open, close, cost, pic1, pic2, tags, fakes) VALUES ('$name', '$description', '$location', '$open', '$close', $cost, '$destination1', '$destination2', '$tags', $fakes)";
 
             mysqli_query($conn, $sql);
 
             move_uploaded_file($file_tmp_name1, '../'.$destination1);
             move_uploaded_file($file_tmp_name2, '../'.$destination2);
-            header("Location: ../delete.php");
+            header("Location: ../delete.php?id=$id");
             exit();
         }
 
