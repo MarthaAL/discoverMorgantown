@@ -6,15 +6,14 @@
     define('MB', 1048576);
 
     if (isset($_POST['activity-submit']))
-     {
-        session_start();
-        
+    {
+        session_start();        
         $name = $_POST['actname'];
-        $location = $_POST['actlocation'];
         $description = $_POST["actdescription"];
+        $location = $_POST['actlocation'];
+        $cost = $_POST['cost'];
         $open = $_POST['open'];
         $close = $_POST['close'];
-        $cost = $_POST['cost'];
         $tags = $_POST['acttags'];
         $fakes = $_POST['fakes'];
         
@@ -61,9 +60,9 @@
             $destination1 = 'activity-images/'.$new_name1;
             $destination2 = 'activity-images/'.$new_name2;
 
-            $ins_query="INSERT INTO activities ([name], [description], [location], [open], [close], cost, pic1, pic2, tags, fakes) VALUES ('$name', '$description', '$location', '$open', '$close', '$cost', '$destination1', '$destination2', '$tags', '$fakes');";
+            $sql = "INSERT INTO activities ([name], [description], [location], [open], [close], cost, pic1, pic2, tags, fakes) VALUES ('$name', '$description', '$location', '$open', '$close', $cost, '$destination1', '$destination2', '$tags', $fakes)";
 
-            mysqli_query($conn, $ins_query);
+            mysqli_query($conn, $sql);
 
             move_uploaded_file($file_tmp_name1, '../'.$destination1);
             move_uploaded_file($file_tmp_name2, '../'.$destination2);
