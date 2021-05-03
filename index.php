@@ -24,7 +24,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src=".jpg" alt="Callyn">
+                    <img src="callynpic.jpg" alt="Callyn">
                     <div class="container">
                         <h2>Group Member</h2>
                         <h1 class="c1">Callyn Zeigler</h1>
