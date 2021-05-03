@@ -1,9 +1,9 @@
-html {
+.contentforfooter {
     position: relative;
     min-height: 100%;
 }
 
-footer {
+.footer {
     background-color: rgb(0, 40, 85);
     position: absolute;
     left: 0;
@@ -13,7 +13,7 @@ footer {
     overflow: hidden;
 }
 
-ul {
+.listbox {
     display: flex;
     justify-content: center;
 }
