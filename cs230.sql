@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 03, 2021 at 10:09 AM
+-- Generation Time: May 03, 2021 at 05:37 PM
 -- Server version: 5.7.33-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -28,16 +28,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `activities` (
   `itemid` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text NOT NULL,
-  `location` varchar(75) NOT NULL,
-  `open` time NOT NULL,
-  `close` time NOT NULL,
-  `cost` int(3) NOT NULL,
-  `pic1` varchar(50) NOT NULL,
-  `pic2` varchar(50) NOT NULL,
-  `tags` varchar(50) NOT NULL,
-  `fakes` int(1) NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `description` text,
+  `location` varchar(75) DEFAULT NULL,
+  `open` time DEFAULT NULL,
+  `close` time DEFAULT NULL,
+  `cost` int(3) DEFAULT NULL,
+  `pic1` varchar(50) DEFAULT NULL,
+  `pic2` varchar(50) DEFAULT NULL,
+  `tags` varchar(50) DEFAULT NULL,
+  `fakes` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -47,7 +47,8 @@ CREATE TABLE `activities` (
 INSERT INTO `activities` (`itemid`, `name`, `description`, `location`, `open`, `close`, `cost`, `pic1`, `pic2`, `tags`, `fakes`) VALUES
 (1, 'White Park', 'White Park is one of the most beautiful spots in Morgantown. White Park has various attractions including a waterfall, many trails, tons of baseball fields, and tons of space, making it a perfect place to go with friends or family. ', '1001 Mississippi St, Morgantown, WV 26501', '08:30:00', '04:30:00', 0, '../images/WhitePark.jpeg', '../images/WhitePark2.jpeg', 'outdoor', 0),
 (2, 'D.P. Dough', 'A great place to get a calzone with just about anything you could ever imagine in it, almost anytime as it is open until 3-4 AM everyday! Not only do they have delicious calzones, but they have wings, tots, breadsticks, and more! ', '408 High ST, Morgantown, WV 26505', '11:00:00', '04:00:00', 1, '../images/DPDough.jpeg', '../images/DPDough2.jpeg', 'restaurant', 0),
-(3, 'Cheat Lake Park and Trail', 'Just outside of Morgantown, Cheat Lake Park has multiple picnic area\'s, a beach area for swimming, a fishing pier, fish cleaning stations, and playgrounds.It is also home to an amazing trail that is 4.5 mile long and follows the Lake Lynn shoreline. ', 'Cheat Lake Trail, Cheat Lake, WV 26508', '07:30:00', '06:00:00', 0, '../images/cheatLake.jpeg', '../images/cheatLake2.jpeg', 'outdoor', 0);
+(3, 'Cheat Lake Park and Trail', 'Just outside of Morgantown, Cheat Lake Park has multiple picnic area\'s, a beach area for swimming, a fishing pier, fish cleaning stations, and playgrounds.It is also home to an amazing trail that is 4.5 mile long and follows the Lake Lynn shoreline. ', 'Cheat Lake Trail, Cheat Lake, WV 26508', '07:30:00', '06:00:00', 0, '../images/cheatLake.jpeg', '../images/cheatLake2.jpeg', 'outdoor', 0),
+(32, 'Code Bar & Lounge', 'Night club. Has an outdoor area for when you feel like you want to pass out.', '471 Chestnut St, Morgantown, WV 26505', '21:00:00', '02:30:00', 1, NULL, NULL, 'nightlife', 0);
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,7 @@ INSERT INTO `profiles` (`pid`, `fname`, `lname`, `uname`, `email`, `profpic`) VA
 (1, 'hsfetty', 'hsfetty', 'hsfetty', 'hs@fetty.com', '../images/default.png'),
 (2, 'Delaney', 'Irwin', 'dmirwin', 'dmi0003@mix.wvu.edu', '../images/default.png'),
 (3, 'heather', 'fetty', 'fettywap', 'fetty@wap.rap', '../images/default.png'),
-(4, 'Martha', 'Lacek', 'Marty01', 'mal0058@mix.wvu.edu', 'profiles/608ffb068257c8.40403099.jpeg'),
+(4, 'Martha', 'Lacek', 'Marty01', 'mal0058@mix.wvu.edu', 'profiles/60905f984d9d59.08652932.jpeg'),
 (5, 'Alex', 'Royce', 'akroyce', 'akr0030@mix.wvu.edu', 'profiles/607c9fcd461d37.25829330.jpg'),
 (6, 'kate', '.', 'kate', '1@1.com', '../images/default.png'),
 (7, 'Delaney', 'Irwin', 'dmi0003', 'dmi0003@mix.wvu.edu', '../images/default.png'),
@@ -153,14 +154,7 @@ CREATE TABLE `suggestions` (
 --
 
 INSERT INTO `suggestions` (`sid`, `name`, `location`, `description`, `tags`, `upload_date`) VALUES
-(2, 'Casa d\'Amici', 'High St', 'Pizza', 'Restaurant', '2021-04-16 00:58:31'),
-(3, 'code', 'high st', 'a fun place to be', 'night life', '2021-05-01 20:45:55'),
-(4, 'suggestion', 'a good place', 'some fun stuff to do ', 'nightlife', '2021-05-01 21:09:20'),
-(5, 'suggestion', 'a good place', 'fun times', 'night life', '2021-05-02 18:10:49'),
-(6, 'suggestion', 'a good place', 'fun times', 'night life', '2021-05-02 18:12:33'),
-(7, 'suggestion', 'a good place', 'fun times', 'night life', '2021-05-02 18:15:07'),
-(8, 'suggestion', 'a good place', 'fun times', 'night life', '2021-05-02 18:21:04'),
-(9, 'suggestion', 'a good place', 'fun times', 'night life', '2021-05-02 18:25:59');
+(1, 'Casa d\'Amici', 'High St', 'Pizza', 'restaurant', '2021-05-03 21:34:40');
 
 -- --------------------------------------------------------
 
@@ -247,6 +241,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `activities`
+--
+ALTER TABLE `activities`
+  MODIFY `itemid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
 -- AUTO_INCREMENT for table `favorites`
 --
 ALTER TABLE `favorites`
@@ -260,7 +259,7 @@ ALTER TABLE `profiles`
 -- AUTO_INCREMENT for table `suggestions`
 --
 ALTER TABLE `suggestions`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
