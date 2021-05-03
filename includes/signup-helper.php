@@ -40,7 +40,7 @@ if(isset($_POST['signup-submit']))
             }
             else
             {
-                $sql = "INSERT INTO users (lname, fname, email, uname, password) VALUES (?, ?, ?, ?, ?)";
+                $sql = "SELECT email FROM users WHERE email=?";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql))
                 {
@@ -49,17 +49,46 @@ if(isset($_POST['signup-submit']))
                 }
                 else
                 {
-                    $hashed = password_hash($passw, PASSWORD_BCRYPT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $lname, $fname, $email, $username, $hashed);
+                    mysqli_stmt_bind_param($stmt, "s", $email);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
-                    echo "<h1>.$fname.</h1>";
+                    $check = mysqli_stmt_num_rows($stmt);
+                
+                    if($check > 0)
+                    {
+                        header("Location: ../signup.php?error=EmailTaken");
+                        exit();
+                    }
+                    else
+                    {
+                        $sql = "INSERT INTO users (lname, fname, email, uname, password) VALUES (?, ?, ?, ?, ?)";
+                        $stmt = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt, $sql))
+                        {
+                            header("Location: ../signup.php?error=SQLInjection");
+                            exit();
+                        }
+                        else
+                        {
+                             $hashed = password_hash($passw, PASSWORD_BCRYPT);
+                            mysqli_stmt_bind_param($stmt, "sssss", $lname, $fname, $email, $username, $hashed);
+                            mysqli_stmt_execute($stmt);
+                            mysqli_stmt_store_result($stmt);
+                            echo "<h1>.$fname.</h1>";
+    
+                            $sqlImg = "INSERT INTO profiles (fname, lname, uname, email) VALUES ('$fname', '$lname','$username', '$email')";
+                            mysqli_query($conn, $sqlImg);
+    
+                            session_start();
+                            $_SESSION['uid'] = $sql['uid'];
+                            $_SESSION['fname'] = $fname;
+                            $_SESSION['uname'] = $username;
+    
+                            header("Location: ../profile.php?signup=success");
+                            exit();
+                        }
 
-                    $sqlImg = "INSERT INTO profiles (fname, lname, uname, email) VALUES ('$fname', '$lname','$username', '$email')";
-                    mysqli_query($conn, $sqlImg);
-
-                    header("Location: ../login.php?signup=success");
-                    exit();
+                    }
                 }
             }
         }

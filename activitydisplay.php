@@ -210,7 +210,6 @@ isLoggedIn();
             </div>
         </form>
     </div>
-
 </div>
 </main>
 </html>

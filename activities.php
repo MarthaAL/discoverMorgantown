@@ -81,12 +81,12 @@ isLoggedIn();
 					<ul class="cd-filter-content cd-filters list">
 						<li>
 							<input class="filter" data-filter=".outdoor" type="checkbox" id="outdoor">
-			    			<label class="checkbox-label" for="outdoor">Outdoors</label>
+			    			<label class="checkbox-label" for="outdoor">Outdoor</label>
 						</li>
 
 						<li>
 							<input class="filter" data-filter=".restaurant" type="checkbox" id="restaurant">
-							<label class="checkbox-label" for="restaurant">Restaurants</label>
+							<label class="checkbox-label" for="restaurant">Restaurant</label>
 						</li>
 
 						<li>
