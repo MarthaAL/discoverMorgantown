@@ -104,6 +104,42 @@ callback(request);
 request.open("GET", url, true);
 request.send();
 }
+function displayLocation(location) {
+
+var content =   '<div class="infoWindow"><strong>'  + location.name + '</strong>'
++ '<br/>'     + location.address
++ '<br/>'     + location.description + '</div>';
+
+if (parseInt(location.lat) == 0) {
+geocoder.geocode( { 'address': location.address }, function(results, status) {
+if (status == google.maps.GeocoderStatus.OK) {
+
+var marker = new google.maps.Marker({
+map: map,
+position: results[0].geometry.location,
+title: location.name
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+infowindow.setContent(content);
+infowindow.open(map,marker);
+});
+}
+});
+} else {
+var position = new google.maps.LatLng(parseFloat(location.lat), parseFloat(location.lon));
+var marker = new google.maps.Marker({
+map: map,
+position: position,
+title: location.name
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+infowindow.setContent(content);
+infowindow.open(map,marker);
+});
+}
+}
 		</script>
 				      </body>
 
