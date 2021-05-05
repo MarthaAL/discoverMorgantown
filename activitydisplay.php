@@ -15,7 +15,7 @@ isLoggedIn();
     $close = $row['close'];
     $location = $row['location'];
     $cost = $row['cost'];
-    $tags = str_replace(',', ' ', $row['tags']);
+    $tags = $row['tags'];
     $pic1 = $row['pic1'];
     $pic2 = $row['pic2'];
     $fakes = $row['fakes'];
