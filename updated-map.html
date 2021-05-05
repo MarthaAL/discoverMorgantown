@@ -32,27 +32,27 @@
 
 		            function initMap() {
 
-				            // The location of Uluru
+				            // Mountainlair location
 
-				            const uluru = { lat: 39.6347439, lng: -79.956217 };
+				            const mountainlair = { lat: 39.6347439, lng: -79.956217 };
 var geocoder = new google.maps.Geocoder();
 
 				    var infowindow = new google.maps.InfoWindow();
-				            // The map, centered at Uluru
+				            // The map, centered at Mountainlair
 
 				            const map = new google.maps.Map(document.getElementById("map"), {
 
 						              zoom: 13,
 
-						              center: uluru,
+						              center: mountainlair,
 
 						            });
 
-				            // The marker, positioned at Uluru
+				            // The marker, positioned at lair
 
 				            const marker = new google.maps.Marker({
 
-						              position: uluru,
+						              position: mountainlair,
 
 						              map: map,
 
@@ -78,55 +78,9 @@ var geocoder = new google.maps.Geocoder();
 
 				    <script
 
-	          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASJMaWB8sS8SD8IAe2YMVLVvGCDrr_umw&callback=initMap&libraries=&v=weekly"
-
-	   asynequest('get_locations.php', function(data) {
-
-
-
-		   var data = JSON.parse(data.responseText);
-
-
-
-		   for (var i = 0; i < data.length; i++) {
-
-			   displayLocation(data[i]);
-
-		   }
-
-	       ></script>
+	          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASJMaWB8sS8SD8IAe2YMVLVvGCDrr_umw&callback=initMap&libraries=&v=weekly" async
+				></script>
 
 				      </body>
 
 </html>
-	<script>
-	function makeRequest(url, callback) {
-
-		var request;
-
-		if (window.XMLHttpRequest) {
-
-			request = new XMLHttpRequest(); // IE7+, Firefox, Chrome, Opera, Safari
-
-		} else {
-
-			request = new ActiveXObject("Microsoft.XMLHTTP"); // IE6, IE5
-
-		}
-
-		request.onreadystatechange = function() {
-
-			if (request.readyState == 4 && request.status == 200) {
-
-				callback(request);
-
-			}
-
-		}
-
-		request.open("GET", url, true);
-
-		request.send();
-
-	}
-	</script>
