@@ -60,15 +60,15 @@ session_start();
                 
                     if($admin == 1){
                         echo '
-                        <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
-                        <li><a href="../review-suggestions.php"><p style="padding: 18px;">Review Suggestions</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
+                        <li><a href="../activities.php"><p style="padding: 18px; font-size: 25px;">Activities</p></a></li>
+                        <li><a href="../review-suggestions.php"><p style="padding: 18px;  font-size: 25px;">Review Suggestions</p></a></li>
+                        <li><a href="../index.php"><p style="padding: 18px;  font-size: 25px;">About Us</p></a></li>';
                     }
                     else{
                         echo '
-                        <li><a href="../activities.php"><p style="padding: 18px;">Activities</p></a></li>
-                        <li><a href="../suggestions.php"><p style="padding: 18px;">Suggestions</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
+                        <li><a href="../activities.php"><p style="padding: 18px;  font-size: 25px;">Activities</p></a></li>
+                        <li><a href="../suggestions.php"><p style="padding: 18px;  font-size: 25px;">Suggestions</p></a></li>
+                        <li><a href="../index.php"><p style="padding: 18px;  font-size: 25px;">About Us</p></a></li>';
                     }
                 }
 
