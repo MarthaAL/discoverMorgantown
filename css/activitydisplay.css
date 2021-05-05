@@ -20,6 +20,7 @@ main{
     height: 49.9%; 
     margin-left: auto; 
     margin-right:1px;
+    object-fit: cover;
 }
 /* Right image */
 .img2{
@@ -29,6 +30,7 @@ main{
      height: 49.9%; 
      margin-left: 1px; 
      margin-right:auto;
+     object-fit: cover;
 }
 /* Card headers */
 h{
