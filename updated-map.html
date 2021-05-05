@@ -1,146 +1,107 @@
 <!DOCTYPE html>
 
 <html>
-
-	  <head>
-
-		      <title>Add Map</title>
-
-
-
-		          <style type="text/css">
-
+	<head>
+        <title>Add Map</title>
+        <style type="text/css">
       /* Set the size of the div element that contains the map */
-
       #map {
-
-	              height: 400px;
-
-			              /* The height is 400 pixels */
-
-			              width: 100%;
-
-					              /* The width is the width of the web page */
-
-					            }
-
-          </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
-	      <script>
-
-		            // Initialize and add the map
-		            function initMap() {
-
-				            // Mountainlair location
-var geocoder = new google.maps.Geocoder();
-var infowindow = new google.maps.InfoWindow();
-				            const mountainlair = { lat: 39.6347439, lng: -79.956217 };
-var geocoder = new google.maps.Geocoder();
-
-				    var infowindow = new google.maps.InfoWindow();
-				            // The map, centered at Mountainlair
-
-				            const map = new google.maps.Map(document.getElementById("map"), {
-
-						              zoom: 13,
-
-						              center: mountainlair,
-
-						            });
-
-				            // The marker, positioned at lair
-
-				            const marker = new google.maps.Marker({
-
-						              position: mountainlair,
-
-						              map: map,
-
-						            });
-makeRequest('includes/get-locations.php', function(data) {
-
-var data = JSON.parse(data.responseText);
-
-for (var i = 0; i < data.length; i++) {
-displayLocation(data[i]);
-}
-});
-				          }
-
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+        }
+        </style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
+	    <script>
+        // Initialize and add the map
+		function initMap() {
+        // Mountainlair location
+		var geocoder = new google.maps.Geocoder();
+		var infowindow = new google.maps.InfoWindow();
+		const mountainlair = { lat: 39.6347439, lng: -79.956217 };
+		var geocoder = new google.maps.Geocoder();
+		var infowindow = new google.maps.InfoWindow();
+		// The map, centered at Mountainlair
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 13,
+            center: mountainlair,
+        });
+        // The marker, positioned at lair
+        const marker = new google.maps.Marker({
+            position: mountainlair,
+            map: map,
+        });
+	makeRequest('includes/get-locations.php', function(data) {
+		var data = JSON.parse(data.responseText);
+		for (var i = 0; i < data.length; i++) {
+			displayLocation(data[i]);
+		}
+	});
     </script>
-
       </head>
-
         <body>
-
 		    <h3>My Google Maps Demo</h3>
-
 		        <!--The div element for the map -->
-
 			    <div id="map"></div>
-
-
-
 			        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-
 				    <script
-
 	          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASJMaWB8sS8SD8IAe2YMVLVvGCDrr_umw&callback=initMap&libraries=&v=weekly" async
 				></script>
 				<script>
 					function makeRequest(url, callback) {
-var request;
-if (window.XMLHttpRequest) {
-request = new XMLHttpRequest(); // IE7+, Firefox, Chrome, Opera, Safari
-} else {
-request = new ActiveXObject("Microsoft.XMLHTTP"); // IE6, IE5
-}
-request.onreadystatechange = function() {
-if (request.readyState == 4 && request.status == 200) {
-callback(request);
-}
-}
-request.open("GET", url, true);
-request.send();
-}
-function displayLocation(location) {
+						var request;
+						if (window.XMLHttpRequest) {
+							request = new XMLHttpRequest(); // IE7+, Firefox, Chrome, Opera, Safari
+						} 
+						else {
+							request = new ActiveXObject("Microsoft.XMLHTTP"); // IE6, IE5
+						}
+						request.onreadystatechange = function() {
+						if (request.readyState == 4 && request.status == 200) {
+							callback(request);
+						}
+					}
+				request.open("GET", url, true);
+				request.send();
+				}
+				function displayLocation(location) {
 
-var content =   '<div class="infoWindow"><strong>'  + location.name + '</strong>'
-+ '<br/>'     + location.address
-+ '<br/>'     + location.description + '</div>';
+				var content =   '<div class="infoWindow"><strong>'  + location.name + '</strong>'
+				+ '<br/>'     + location.address
+				+ '<br/>'     + location.description + '</div>';
 
-if (parseInt(location.lat) == 0) {
-geocoder.geocode( { 'address': location.address }, function(results, status) {
-if (status == google.maps.GeocoderStatus.OK) {
+				if (parseInt(location.lat) == 0) {
+				geocoder.geocode( { 'address': location.address }, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
 
-var marker = new google.maps.Marker({
-map: map,
-position: results[0].geometry.location,
-title: location.name
-});
+				var marker = new google.maps.Marker({
+				map: map,
+				position: results[0].geometry.location,
+				title: location.name
+				});
 
-google.maps.event.addListener(marker, 'click', function() {
-infowindow.setContent(content);
-infowindow.open(map,marker);
-});
-}
-});
-} else {
-var position = new google.maps.LatLng(parseFloat(location.lat), parseFloat(location.lon));
-var marker = new google.maps.Marker({
-map: map,
-position: position,
-title: location.name
-});
+				google.maps.event.addListener(marker, 'click', function() {
+				infowindow.setContent(content);
+				infowindow.open(map,marker);
+				});
+				}
+				});
+				} else {
+				var position = new google.maps.LatLng(parseFloat(location.lat), parseFloat(location.lon));
+				var marker = new google.maps.Marker({
+				map: map,
+				position: position,
+				title: location.name
+				});
 
-google.maps.event.addListener(marker, 'click', function() {
-infowindow.setContent(content);
-infowindow.open(map,marker);
-});
-}
-}
+				google.maps.event.addListener(marker, 'click', function() {
+				infowindow.setContent(content);
+					infowindow.open(map,marker);
+					});
+				}
+			}
 		</script>
-				      </body>
-
+    </body>
 </html>
