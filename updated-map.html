@@ -58,7 +58,7 @@ var geocoder = new google.maps.Geocoder();
 						              map: map,
 
 						            });
-makeRequest('get_locations.php', function(data) {
+makeRequest('includes/get-locations.php', function(data) {
 
 var data = JSON.parse(data.responseText);
 
