@@ -36,7 +36,7 @@
                         <label for="inputTags" class="sr-only">Possible Tag(s)</label>
                         <input type="tags" id="inputTags" class="form-control" name="tags" placeholder="Tag(s)"
                             required>
-                        <h6>Tag Options: nightlife, outdoor, restaurant, and volunteer</h6>
+                        <h6>Tag Options: nightlife, outdoor, restaurant, retail, volunteer, and other (separate multiple tags with a comma)</h6>
 
                         <button class="btn btn-lg btn-outline-warning btn-block" name="suggestion-submit"
                             type="submit">Submit Suggestion</button>

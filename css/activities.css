@@ -8,7 +8,10 @@ Primary style
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+li{
+  padding-left: 25pt;
+  padding-right: 25pt;
+}
 html {
   font-size: 62.5%;
 }
