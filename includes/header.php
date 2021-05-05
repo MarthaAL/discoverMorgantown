@@ -60,23 +60,26 @@ session_start();
                 
                     if($admin == 1){
                         echo '
-                        <li><a href="../activities.php"><p style="padding: 18px; font-size: 25px;">Activities</p></a></li>
-                        <li><a href="../review-suggestions.php"><p style="padding: 18px;  font-size: 25px;">Review Suggestions</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;  font-size: 25px;">About Us</p></a></li>';
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../activities.php"><p style="padding: 18px; font-size: 25px;">Activities</p></a></li>
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../map.php"><p style="padding: 18px;  font-size: 25px;">Map</p></a></li>
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../review-suggestions.php"><p style="padding: 18px;  font-size: 25px;">Review Suggestions</p></a></li>
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../index.php"><p style="padding: 18px;  font-size: 25px;">About Us</p></a></li>';
                     }
                     else{
                         echo '
-                        <li><a href="../activities.php"><p style="padding: 18px;  font-size: 25px;">Activities</p></a></li>
-                        <li><a href="../suggestions.php"><p style="padding: 18px;  font-size: 25px;">Suggestions</p></a></li>
-                        <li><a href="../index.php"><p style="padding: 18px;  font-size: 25px;">About Us</p></a></li>';
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../activities.php"><p style="padding: 18px;  font-size: 25px;">Activities</p></a></li>
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../map.php"><p style="padding: 18px;  font-size: 25px;">Map</p></a></li>
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../suggestions.php"><p style="padding: 18px;  font-size: 25px;">Suggestions</p></a></li>
+                        <li style="padding-left: 0px; padding-right: 0px;"><a href="../index.php"><p style="padding: 18px;  font-size: 25px;">About Us</p></a></li>';
                     }
+                    
                 }
 
                 else {
                     echo '
-                    <li><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
-                    <li><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
-                    <li><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
+                    <li style="padding-left: 0px; padding-right: 0px;"><a href="../login.php"><p style="padding: 18px;">Log In</p></a></li>
+                    <li style="padding-left: 0px; padding-right: 0px;"><a href="../signup.php"><p style="padding: 18px;">Sign Up</p></a></li>
+                    <li style="padding-left: 0px; padding-right: 0px;"><a href="../index.php"><p style="padding: 18px;">About Us</p></a></li>';
                 }
             ?>        
         </ul>
