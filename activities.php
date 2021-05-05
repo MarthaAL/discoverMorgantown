@@ -1,5 +1,8 @@
 <!doctype html>
 <?php
+//If the user is logged in, displays all the activities as well as a corresponding picture.
+//If the user clicks on an activity, he or she will be relocated to that activity's page.
+//Additionally, the user can search through the activities using a search bar or using checkboxes for different activity categories.
 require 'includes/header.php';
 isLoggedIn();
 ?>

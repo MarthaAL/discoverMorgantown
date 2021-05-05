@@ -1,4 +1,7 @@
 <?php
+//If the user is logged in, displays the selected activity's information, including two pictures, opening and closing times, 
+//a description, an address, and relevant tags.
+//The user can comment on the activity, as well as favorite or unfavorite it.
 require 'includes/header.php';
 isLoggedIn();
 
