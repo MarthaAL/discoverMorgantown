@@ -15,7 +15,7 @@ isLoggedIn();
     $close = $row['close'];
     $location = $row['location'];
     $cost = $row['cost'];
-    $tags = $row['tags'];
+    $tags = str_replace(',', ' ', $row['tags']);
     $pic1 = $row['pic1'];
     $pic2 = $row['pic2'];
     $fakes = $row['fakes'];
@@ -182,8 +182,6 @@ isLoggedIn();
                  <h>Tags</h>
             </div>
             <div class="w3-container2">
-		    // Replaces commas in between tags with whitespace
-		$tags = str_replace(',', ' ', $row['tags']);
                 <p0>        
                     <span class="w3-tag w3-light-black w3-small w3-margin-bottom"><?php echo $tags ?> </span>
                 </p0>
