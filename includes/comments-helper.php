@@ -1,8 +1,9 @@
 <?php 
 require_once 'dbhandler.php';
 date_default_timezone_set('UTC');
-
-
+require_once 'dbhandler.php';
+// Checks to see if the user is signed in
+//Reloads same page without adding comment if not signed in
 if(isset($_POST['comments-submit'])){
     session_start();
     $uname = $_SESSION['uname'];
@@ -10,6 +11,7 @@ if(isset($_POST['comments-submit'])){
     if($uname == null){
         header("Location: ../activitydisplay.php?id=$item_id");
     }
+    //If user is signed in the comment is then added with username, message, profilepic, and time/date of post
     else{
         $profpic = "SELECT profpic FROM profiles WHERE uname='$uname';";
         $res = mysqli_query($conn, $profpic);

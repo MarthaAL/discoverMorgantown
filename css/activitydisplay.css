@@ -88,15 +88,18 @@ p1{
     color: darkgreen;
     text-align: left;
 }
+/* Open/Close hours */
 hours{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* Profile Image on comments */
 .img3{
     display: inline;
     max-width: 75px; max-height:75px; border-radius: 50%;
     
 }
+/* Profile name of user who posted comment */
 pname{
     font-size: 16pt;
     display:inline;
@@ -106,11 +109,15 @@ pname{
     margin-left: 25px;
     margin-right: 25px;
 }
+/* Date/Time Comment was posted */
 posted{
     display:inline;
 }
+/* Comment that was posted */
 comments{
+    text-align: right;
     margin-left: 200px;
+   
 }
 
 body {

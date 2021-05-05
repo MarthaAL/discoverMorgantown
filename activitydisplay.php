@@ -2,7 +2,7 @@
 require 'includes/header.php';
 isLoggedIn();
 
-
+// Pulls all variables needed from the activities table
     include_once 'includes/dbhandler.php';
     $activityid = $_GET['id'];
     $_SESSION['activity'] = $activityid;
@@ -39,7 +39,7 @@ isLoggedIn();
 <div class="w3-content" style="max-width:1500px">
 
 
-<!-- Grid -->
+<!-- Starts building a Grid -->
 <div class="w3-row">
 
 <!-- Groups all info cards together under Grid -->
@@ -51,10 +51,11 @@ isLoggedIn();
     <div class="w3-container w3-center">
       <h0> <?php echo $name ?> </h0>
       <br>
-      <hours>Hours: <?php echo substr($open, 1, 4) ?>AM - <?php echo substr($close, 1, 4)?>PM </hours>
+      <!-- Displays time in AM/PM format -->
+      <hours>Hours: <?php echo date('h:i A', strtotime($open)) ?> - <?php echo date('h:i A', strtotime($close)) ?> <br> *Hours subject to change </hours>
     </div>
 
-    <!-- Images -->
+    <!-- Activity Images -->
     <div class="w3-container" >
       <img class = "img1" src= <?php echo $pic1 ?> alt = "Activity Image 1" >
       <img class = "img2" src= <?php echo $pic2 ?> alt = "Activity Image 2">
@@ -65,6 +66,7 @@ isLoggedIn();
   <hr>
 </div>
 
+<!-- Further defines grid and creates card -->
 <div class="w3-row">
     <div class="w3-col l8 s12">
         <div class="w3-card-4 w3-margin">
@@ -72,13 +74,13 @@ isLoggedIn();
             <!-- Details Card for description -->
             <div class="w3-container">
                 <h>Details:</h>
-                <sh class="w3-opacity"> <br>Last Updated: April 26, 2021 </sh>
+                <sh class="w3-opacity"> <br>Last Updated: May 5, 2021 </sh>
             </div>
         
             <div class="w3-container2">
                 <p>  <?php echo $descript ?> 
                     <br>         </p>
-         <!-- Checks to see if their is a cost value to display -->
+         <!-- Checks to see if there is a cost value to display -->
                 <p0> <?php  $costdisplay = 'Cost: ';
                             if($cost == 0){
                                     $cost = null;
@@ -122,13 +124,16 @@ isLoggedIn();
                            
                     $sql = "SELECT * FROM comments WHERE itemid = $activityid ORDER BY posted DESC";
                     $query = mysqli_query($conn, $sql);
-
+                    //Creates Comment Cards 
                     while($row = mysqli_fetch_assoc($query)){
                         echo '<div class = "w3-card-4"> 
+                         <div class ="w3-container2">
                         <img class = "img3"  src= "'.$row['profpic'].'">
                         <pname>'.$row["profname"].'</pname>
                         <posted>'.$row["posted"].'</posted>
+                        <br>
                         <comments>'.$row['comments'].'</comments>
+                        </div>
                         </div>';
                      }
                 ?>
@@ -140,9 +145,9 @@ isLoggedIn();
                     <form id="comments-form" action="includes/comments-helper.php" method="post">
                         <div class="form-group" style = "margin-top: 15px;">
                             <textarea name="comments" id="comments-text" cols="50" rows="3" placeholder="Enter a comment..."></textarea>
-                            <input type="hidden" name="itemid" value="1">
+                            <input type="hidden" name="itemid" value="<?php echo $_GET['id'];?>">
                         </div>
-
+                    
                         <div class="form-group" style = "margin-bottom: 10px;">
                         <!-- Creates comment button-->
                             <button class="btn btn-outline-danger" type="submit" name="comments-submit" id="comments-submit" style="width: 20%, height: 120%">Comment</button>
@@ -157,18 +162,16 @@ isLoggedIn();
                 
 
 
-<!-- Location + Info Card -->
+<!-- Creates Location Card -->
     <div class="w3-col l4">
 
         <div class="w3-card w3-margin">
             <div class="w3-container w3-padding">
-                <h>Location and Contact Information</h>
+                <h>Location</h>
             </div>
             <div class="w3-container2">
                 <p0>Location: </p0>
                 <p> <?php echo $location ?> <br> </p>
-                <p0> Contact Info: </p0>
-                <p> </p>
             </div>
         
         </div>
@@ -201,7 +204,7 @@ isLoggedIn();
                 }
             }
         ?>
-
+    
         <form action="includes/favorite-helper.php" method="POST" enctype="multipart/form-data">
             <div class="w3-card w3-margin button">
                 <div class="w3-container w3-padding ">
@@ -213,7 +216,3 @@ isLoggedIn();
 </div>
 </main>
 </html>
-
-<?php
-include 'includes/footer.php';
-?>
