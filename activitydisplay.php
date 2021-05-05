@@ -182,6 +182,8 @@ isLoggedIn();
                  <h>Tags</h>
             </div>
             <div class="w3-container2">
+		    // Replaces commas in between tags with whitespace
+		$tags = str_replace(',', ' ', $row['tags']);
                 <p0>        
                     <span class="w3-tag w3-light-black w3-small w3-margin-bottom"><?php echo $tags ?> </span>
                 </p0>
