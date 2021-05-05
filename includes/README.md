@@ -1,1 +1,1 @@
-Contains the files that give functionality to pages, such as creating an account, loggin in, updating profile pictures, and submitting suggestions.
+Contains the php files that are included in every page or give functionality to pages by interacting with the database. This allows for the header and footer files to be displayed each page. It also includes files for functionality such as creating an account, loggin in, updating profile pictures, making comments, favoriting activities, submitting suggestions, and approving suggestions.

@@ -1,1 +1,1 @@
-Contains the styling files associated with each page/object on the website.
+Contains the styling files associated with each page feature or page on the website. This allows for the website to have a consistent appearance.

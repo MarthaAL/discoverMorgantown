@@ -1,1 +1,1 @@
-Contains the images associated with each activity.
+Contains the two images associated with each activity. The first image will be displayed in the gallery of activities and both images will be displayed on the page associated with the activity.

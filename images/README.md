@@ -1,1 +1,1 @@
-Contains the images for each member of the software engineering team as well as custom images for the website background.
+Contains the images for each member of the development team as well as special images such as the default profile picture and background image for certain pages. The images of each member of the development team will be displayed on the home page and the background image will be used for the sign up, log in, and suggestions pages.
