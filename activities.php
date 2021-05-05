@@ -103,6 +103,11 @@ isLoggedIn();
 							<input class="filter" data-filter=".retail" type="checkbox" id="retail">
 							<label class="checkbox-label" for="retail">Retail</label>
 						</li>
+						
+						<li>
+							<input class="filter" data-filter=".other" type="checkbox" id="other">
+							<label class="checkbox-label" for="other">Other</label>
+						</li>
 					</ul>
 				</div>
 			</form>
