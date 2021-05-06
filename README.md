@@ -8,12 +8,16 @@ This website was built for students by students. Our goal is to create a place w
 
 Screenshots
 
+![alt text](https://github.com/tdevine1/WVU_CS230_2021.01_Group03/blob/master/images/signup.png?raw=true)
 sign up page
 
+![alt text](https://github.com/tdevine1/WVU_CS230_2021.01_Group03/blob/master/images/login.png?raw=true)
 log in page
 
+![alt text](https://github.com/tdevine1/WVU_CS230_2021.01_Group03/blob/master/images/profile.png?raw=true)
 profile page
 
+![alt text](https://github.com/tdevine1/WVU_CS230_2021.01_Group03/blob/master/images/activities.png?raw=true)
 activities page
 
 map page
